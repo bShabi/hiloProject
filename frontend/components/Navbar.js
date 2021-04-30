@@ -1,4 +1,4 @@
-import style from '../styles/Navbar.module.css'
+import style from '@/styles/Navbar.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
@@ -8,9 +8,8 @@ export default function Navbar() {
     return (
         <header className={style.header}>
             <div className={style.logo}>
-                <Link href='/'>
-                    <Image src='/public/logo.png' width={200} height={200} />
-                </Link>
+                {/* <Link href='/'>
+                </Link> */}
             </div>
             <nav>
                 <ul>
@@ -49,6 +48,6 @@ export default function Navbar() {
 
                 </ul>
             </nav>
-        </header>
+        </header >
     )
 }
