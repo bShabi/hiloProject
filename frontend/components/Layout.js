@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import style from '../styles/Layout.module.css';
+import Navbar from './Navbar'
 
 export default function Layout({ title, keywords, description, children }) {
     return (
@@ -9,9 +11,10 @@ export default function Layout({ title, keywords, description, children }) {
                 <meta name='description' content={description} />
                 <meta name='keywords' content={keywords} />
             </Head>
-
-
-            {children}
+            <Navbar />
+            <div className={style.container}>
+                {children}
+            </div>
         </div>
     )
 }
