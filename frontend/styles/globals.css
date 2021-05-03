@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  --mainheaders: #000358;
+  /* --bglight: #c4d9ff; */
 }
 
 html,
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.8;
+  background-color: var(--bglight);
 }
 
 a {
@@ -23,6 +27,7 @@ p {
 
 h1 {
   margin-bottom: 20px;
+  color: var(--mainheaders);
 }
 
 .btn {

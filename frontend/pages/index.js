@@ -24,28 +24,28 @@ export default function HomePage() {
         </div>
         <div className={style.categories}>
           <ul>
-            <li>
+            <li className={style.left}>
               <a href="/">Money Management</a>
             </li>
-            <li>
+            <li className={style.left}>
               <a href="/">Financial Freedom</a>
             </li>
-            <li>
+            <li className={style.left}>
               <a href="/">Food & Fit</a>
             </li>
-            <li>
+            <li className={style.left}>
               <a href="/">Entrepreneurship</a>
             </li>
-            <li>
+            <li className={style.right}>
               <a href="/">Everyday Handyman</a>
             </li>
-            <li>
+            <li className={style.right}>
               <a href="/">Career</a>
             </li>
-            <li>
+            <li className={style.right}>
               <a href="/">Mental Health</a>
             </li>
-            <li>
+            <li className={style.right}>
               <a href="/">Trave</a>l
             </li>
           </ul>
@@ -54,9 +54,8 @@ export default function HomePage() {
       {/* Sliders */}
       <div className={sliderStyle.swiperContainer}>
         <div className={sliderStyle.main}>
-          <Slider />
+          <Slider name={'example'} />
         </div>
-        <h1>bb</h1>
       </div>
       <div className={sliderStyle.swiperContainer}>
         <div className={sliderStyle.main}>

@@ -15,20 +15,41 @@ import { urlObjectKeys } from 'next/dist/next-server/lib/utils'
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation])
 
-export default function App() {
+export default function Slider(props) {
   return (
     <>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={20}
+        slidesPerView={4}
+        spaceBetween={57}
         slidesPerGroup={3}
         loop={false}
         loopFillGroupWithBlank={true}
         pagination={{
           clickable: true,
         }}
+        breakpoints={{
+          1: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            slidesPerGroup: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 57,
+          },
+        }}
+        pagination={false}
         navigation={true}
         className={style.swiperSlide}
+        centeredSlides={true}
+        centeredSlidesBounds={true}
       >
         <SwiperSlide>
           <img
