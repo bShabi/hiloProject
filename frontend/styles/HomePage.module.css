@@ -1,0 +1,142 @@
+/* Upper Content */
+.content{
+    max-width: 500px;
+    text-align: center;
+    padding: 30px 0;
+    margin: 0 auto; 
+    /* justify-content: center; */
+}
+.content p{
+    padding-bottom: 30px;
+}
+
+/* Buttons */
+.btns{
+    display: flex;
+}
+.lightbtn{
+    padding: 10px 30px;
+    background-color: transparent;
+    color: var(--mainheaders);
+    border-radius: 5px;
+    border: 1px solid var(--mainheaders);
+    margin-right: 20px;
+    cursor: pointer;
+}
+.darkbtn{
+    background-color: var(--mainheaders);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--mainheaders);
+    cursor: pointer;
+}
+.darkbtn:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Categories Carousel */
+.categories{
+    align-items: center;
+    width: 100%;
+    left:0;
+    text-align: center;
+    margin-top:30px;
+}
+.categories ul{
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    box-shadow: 0px 0px 5px #000000;
+}
+.categories ul li{
+    display: inline-block;
+    padding: 10px;
+}
+.categories a{
+    color: #000000;
+}
+
+/* Categories Carousel - Responsive*/
+@media only screen and (max-width: 375px) {
+    .categories ul{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 426px) {
+    .categories ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .categories ul .left{
+        flex: 50%
+    }
+    .categories ul .right{
+        flex: 50%
+    }
+    .content{
+        padding: 0px 20px;
+    }
+}
+@media only screen and (max-width: 1025px) {
+
+    .categories ul li{
+        font-size: smaller;
+    }
+
+
+}
+
+
+/* Slider */
+
+.thumbnailSlider{
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+.thumbnailSlider .thumbnailContainer{
+	width: 100%;
+	float: left;
+	transition: margin 1s ease;
+}
+
+.thumbnailSlider .item{
+    height: 250px;
+    background-color: grey;
+    line-height: 250px;
+    text-align: center;
+    font-size: 50px;
+    color:#ffffff;
+    float: left;
+  }
+
+  .thumbnailSlider .controls{
+	width: 100%;
+	float: left;
+	padding:15px;
+}
+
+.thumbnailSlider .controls ul{
+	display: block;
+	text-align: center;
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+.thumbnailSlider .controls ul li{
+	height: 35px;
+	width: 35px;
+	border:1px solid #c3c3c3;
+	margin:4px;
+	display: inline-block;
+	line-height: 33px;
+	cursor: pointer;
+}
+.thumbnailSlider .controls ul li.active{
+	background-color: green;
+	color:#ffffff;
+}
