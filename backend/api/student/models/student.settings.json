@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "name": "Student",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "password": {
+      "type": "password",
+      "required": true,
+      "minLength": 6,
+      "maxLength": 10
+    },
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "middlename": {
+      "type": "string"
+    },
+    "university": {
+      "type": "string"
+    },
+    "graduation": {
+      "type": "datetime"
+    },
+    "isStudent": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "isDegree": {
+      "type": "boolean"
+    }
+  }
+}
