@@ -1,0 +1,31 @@
+.container {
+  padding: 10px;
+}
+
+.blugbg {
+  background: #458cfe;
+  width: 599px;
+  height: 566px;
+  border-radius: 36px;
+  padding: 30px;
+}
+.title {
+  text-align: center;
+  letter-spacing: 0.2px;
+  line-height: 56px;
+  font-size: 42px;
+}
+.subtitle {
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 10px;
+}
+.btnSignIn {
+  width: 200px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
