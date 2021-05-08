@@ -9,17 +9,27 @@ import Layout from '@/components/Layout'
 import styles from '@/styles/AuthForm.module.css'
 import SliderLogin from '@/components/Login/SliderLogin'
 import SliderCreateAccount from '@/components/Login/SliderCreateAccount'
+import { API_URL } from '@/config/index'
 
-export default function LoginPage() {
-
+export default function LoginPage({ students }) {
 
     return (
         <Layout title='User Login'>
             {/* {Login Sider} */}
             <div className={styles.wrapper}>
                 <SliderLogin />
-                <SliderCreateAccount />
+                <SliderCreateAccount student={students} />
             </div>
         </Layout>
     )
+}
+export async function getStaticProps() {
+
+
+    const res = await fetch(`http://localhost:1337/students`)
+    const data = await res.json()
+
+    return {
+        props: { students: data }
+    }
 }

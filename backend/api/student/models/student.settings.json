@@ -18,20 +18,13 @@
       "minLength": 6,
       "maxLength": 10
     },
-    "firstname": {
-      "type": "string",
-      "required": true
-    },
-    "lastname": {
+    "fullname": {
       "type": "string",
       "required": true
     },
     "email": {
       "type": "email",
       "required": true
-    },
-    "middlename": {
-      "type": "string"
     },
     "university": {
       "type": "string"
@@ -46,6 +39,14 @@
     },
     "isDegree": {
       "type": "boolean"
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "role": {
+      "plugin": "users-permissions",
+      "model": "role"
     }
   }
 }

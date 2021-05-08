@@ -44,7 +44,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li className={style.btnLogin}>
-            <Link href="/account/login/signup">
+            <Link href="/account/signup">
               <a className="btn-secondary btn-icon">
                 <FaSignInAlt /> Login
               </a>

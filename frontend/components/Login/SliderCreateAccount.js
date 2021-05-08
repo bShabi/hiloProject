@@ -7,7 +7,8 @@ import styles from '@/styles/SdCreateAccount.module.css'
 import CreateStudent from '@/components/Signin/CreateStudent'
 
 
-export default function SliderCreateAccount() {
+export default function SliderCreateAccount(students) {
+
 
     const [screen, setScreen] = useState(null)
 
@@ -50,7 +51,7 @@ export default function SliderCreateAccount() {
     return (
         <div className={styles.container}>
             {!screen && welcome()}
-            {screen === 'Student' && <CreateStudent />}
+            {screen === 'Student' && <CreateStudent students={students.student} />}
             {screen === 'Mentor' && signInMentor()}
         </div>
 

@@ -5,17 +5,22 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "data:import": "node config/seender -d"
   },
   "dependencies": {
-    "cookie": "^0.4.1",
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "axios": "^0.21.1",
+    "cookie": "^0.4.1",
     "next": "10.2.0",
+    "node-xlsx": "^0.16.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
     "react-toastify": "^7.0.4",
-    "swiper": "^6.5.9"
+    "read-excel-file": "^5.1.0",
+    "swiper": "^6.5.9",
+    "xlsx": "^0.16.9"
   },
   "devDependencies": {
     "file-loader": "^6.2.0"
