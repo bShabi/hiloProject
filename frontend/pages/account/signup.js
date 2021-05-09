@@ -10,7 +10,7 @@ import styles from '@/styles/AuthForm.module.css'
 import SliderLogin from '@/components/Login/SliderLogin'
 import SliderCreateAccount from '@/components/Login/SliderCreateAccount'
 import { API_URL } from '@/config/index'
-
+import test from '@/components/test'
 export default function LoginPage({ students }) {
 
     return (
@@ -24,6 +24,17 @@ export default function LoginPage({ students }) {
     )
 }
 export async function getStaticProps() {
+
+
+
+
+
+
+
+
+
+
+
 
 
     const res = await fetch(`http://localhost:1337/students`)
