@@ -9,23 +9,46 @@
   border-radius: 36px;
   padding: 30px;
 }
-.title {
-  text-align: center;
+.title h2 {
   letter-spacing: 0.2px;
-  line-height: 56px;
+  margin: 0 auto;
   font-size: 42px;
-}
-.subtitle {
+  width: 353px;
+  height: 56px;
   font-weight: 800;
-  font-size: 50px;
-  line-height: 60px;
-  text-align: center;
-  padding-top: 32px;
-  padding-bottom: 10px;
+  color: #ffffff;
 }
-.btnSignIn {
+
+.blugbg h3 {
+  width: 488px;
+  height: 126px;
+  color: #000358;
+  font-size: 50px;
+  font-weight: 800;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+.subtitle h2 {
+  width: 488px;
+  height: 126px;
+  color: #000358;
+  font-size: 50px;
+  font-weight: 800;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.subtitle p {
+  width: 579px;
+  height: 23px;
+  color: #000358;
+  font-weight: 600px;
+  font-size: 18px;
+  padding-top: 11px;
+}
+/* .btnSignIn {
   width: 200px;
   height: 50px;
   background-color: #f0f0f0;
   border-radius: 5px;
-}
+} */

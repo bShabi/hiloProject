@@ -31,6 +31,8 @@ export default function CreateStudent(students) {
         e.preventDefault()
         const patternFullName = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
         const patternEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+(\.edu)$/;
+        const patternPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+
 
         if (!fullName || !email) {
             console.log("Error 1");
@@ -54,7 +56,10 @@ export default function CreateStudent(students) {
             console.log("User include");
             return
         }
-
+        if (!patternPassword.test(password)) {
+            console.log("password incorrect");
+            return
+        }
         setStepRegister(3)
 
     }
@@ -133,14 +138,14 @@ export default function CreateStudent(students) {
                         type='date'
                         id='fullname'
                         value={graduation}
-                    // onChange={(e) => setGraduation(e.target.value)}
+                        onChange={(e) => setGraduation(e.target.value)}
                     />
                     <input
                         placeholder='Degree'
                         type='text'
                         id='fullname'
                         value={graduation}
-                    // onChange={(e) => setGraduation(e.target.value)}
+                        onChange={(e) => setGraduation(e.target.value)}
                     />
 
                 </div>

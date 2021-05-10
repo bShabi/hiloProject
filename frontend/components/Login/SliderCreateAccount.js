@@ -7,9 +7,9 @@ import styles from '@/styles/SdCreateAccount.module.css'
 import CreateStudent from '@/components/Signin/CreateStudent'
 
 
-export default function SliderCreateAccount(students) {
+export default function SliderCreateAccount({ students, univeristy }) {
 
-
+    console.log(univeristy);
     const [screen, setScreen] = useState(null)
 
     const studnetHandlerBtn = () => {
@@ -26,10 +26,10 @@ export default function SliderCreateAccount(students) {
                 <div className={styles.title}>
                     <h2>Create account</h2>
                 </div>
-                <div className={styles.subtitle}>
-                    <h2>Are you a student <b /> </h2> <h2> or a mentor?</h2>
-                    <p>*Students will get benefits and discounts on the platform</p>
-                </div>
+                {/* <div className={styles.subtitle}> */}
+                <h3>Are you a student or a mentor?</h3>
+                <p>*Students will get benefits and discounts on the platform</p>
+                {/* </div> */}
                 <div>
                     <button className={styles.btnSignIn} onClick={studnetHandlerBtn}>Student</button>
                     <button className={styles.btnSignIn} onClick={mentorHandlerBtn}>Mentor</button>
