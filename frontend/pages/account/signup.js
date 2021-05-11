@@ -12,8 +12,7 @@ import SliderCreateAccount from '@/components/Login/SliderCreateAccount'
 import { API_URL } from '@/config/index'
 
 
-export default function LoginPage({ students, univeristy }) {
-
+export default function SignUpPage({ students }) {
     return (
         <Layout title='User Login'>
             {/* {Login Sider} */}
@@ -22,7 +21,7 @@ export default function LoginPage({ students, univeristy }) {
                     <SliderLogin />
                 </div>
                 <div className={styles.SliderCreateAccount}>
-                    <SliderCreateAccount student={students} univeristy={univeristy} />
+                    <SliderCreateAccount student={students} />
                 </div>
             </div>
         </Layout>
@@ -31,21 +30,17 @@ export default function LoginPage({ students, univeristy }) {
 export async function getStaticProps() {
 
 
-
-
-
     const resStudent = await fetch(`http://localhost:1337/students`)
     const students = await resStudent.json()
-
     // // Get All univeristies {limit == 1000}
 
-    const resUniveristy = await fetch(`http://localhost:1337/usa-universities`)
-    const univeristy = await resUniveristy.json()
+    // const resUniveristy = fetch(`http://localhost:1337/usa-universities`)
+    // const univeristy = resUniveristy.json()
     // const univeristy = await resUniveristy.json()
     return {
         props: {
             students: students,
-            univeristy: univeristy
+            // univeristy: univeristy
 
         }
     }

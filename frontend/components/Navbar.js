@@ -43,10 +43,19 @@ export default function Navbar() {
               <a>About</a>
             </Link>
           </li>
-          <li className={style.btnLogin}>
+          {/* Sign up Button  */}
+          <li className={style.btnSignin}>
             <Link href="/account/signup">
               <a className="btn-secondary btn-icon">
-                <FaSignInAlt /> Login
+                <FaSignInAlt /> Join HiLo
+              </a>
+            </Link>
+          </li>
+          {/* Login Button */}
+          <li className={style.btnLogin}>
+            <Link href="/account/login">
+              <a className="btn-secondary btn-icon">
+                Log in
               </a>
             </Link>
           </li>

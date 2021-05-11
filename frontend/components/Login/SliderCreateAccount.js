@@ -4,12 +4,12 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useState, useEffect } from 'react'
 import styles from '@/styles/SdCreateAccount.module.css'
-import CreateStudent from '@/components/Signin/CreateStudent'
+import CreateStudent from '@/components/SignUp/CreateStudent'
+import CreateMentor from '@/components/SignUp/CreateMentor'
+
+export default function SliderCreateAccount(students) {
 
 
-export default function SliderCreateAccount({ students, univeristy }) {
-
-    console.log(univeristy);
     const [screen, setScreen] = useState(null)
 
     const studnetHandlerBtn = () => {
@@ -33,8 +33,8 @@ export default function SliderCreateAccount({ students, univeristy }) {
                 <div>
                     <button className={styles.btnSignIn} onClick={studnetHandlerBtn}>Student</button>
                     <button className={styles.btnSignIn} onClick={mentorHandlerBtn}>Mentor</button>
-                    {screen === 'Student' && (signInStudent())}
-                    {screen === 'Mentor' && (signInMentor())}
+                    {screen === 'Student' && (CreateStudent(students.student))}
+                    {screen === 'Mentor' && (CreateMentor())}
                 </div>
                 <div>
                     <button>Skip</button>

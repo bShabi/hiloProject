@@ -40,12 +40,16 @@
   color: red;
 }
 
-.btnLogin{
+.btnLogin {
+  position: absolute;
+  right: 100px;
+}
+.btnSignin {
   position: absolute;
   right: 0;
 }
 
-.hamburger{
+.hamburger {
   background-color: transparent;
   border: 0;
   color: var(--mainheaders);
@@ -53,40 +57,39 @@
   cursor: pointer;
   display: none;
 }
-.hamburger:focus{
+.hamburger:focus {
   outline: none;
 }
 
 @media (max-width: 426px) {
-  .navbar{
-   text-align: center;
-   width: 100%;
+  .navbar {
+    text-align: center;
+    width: 100%;
   }
-  .btnLogin{
+  .btnLogin {
     position: absolute;
     top: 20px;
     right: 5px;
   }
-  .hamburger{
+  .hamburger {
     position: absolute;
     top: 20px;
     left: 20px;
     justify-content: center;
     display: block;
-
   }
-  ul.navUl{
+  ul.navUl {
     display: none;
     flex-direction: column;
   }
-  .navUl.show{
+  .navUl.show {
     display: flex;
     flex-direction: column;
   }
-  .header.show{
-    height:200px;
+  .header.show {
+    height: 200px;
   }
-  .header ul{
+  .header ul {
     height: 100px;
     justify-content: space-between;
   }
