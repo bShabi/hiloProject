@@ -8,11 +8,12 @@ import Layout from '@/components/Layout'
 // import AuthContext from '@/context/AuthContext'
 import styles from '@/styles/AuthForm.module.css'
 import SliderLogin from '@/components/Login/SliderLogin'
-import SliderCreateAccount from '@/components/Login/SliderCreateAccount'
+import SliderCreateAccount from '@/components/SignUp/SliderCreateAccount'
 import { API_URL } from '@/config/index'
 
 
-export default function SignUpPage({ students }) {
+export default function SignUpPage({ students, degrees }) {
+    // console.log(degrees);
     return (
         <Layout title='User Login'>
             {/* {Login Sider} */}
@@ -21,7 +22,7 @@ export default function SignUpPage({ students }) {
                     <SliderLogin />
                 </div>
                 <div className={styles.SliderCreateAccount}>
-                    <SliderCreateAccount student={students} />
+                    <SliderCreateAccount student={students} degrees={degrees} />
                 </div>
             </div>
         </Layout>
@@ -32,6 +33,9 @@ export async function getStaticProps() {
 
     const resStudent = await fetch(`http://localhost:1337/students`)
     const students = await resStudent.json()
+
+    const resDegree = await fetch(`http://localhost:1337/degrees`)
+    const degrees = await resDegree.json()
     // // Get All univeristies {limit == 1000}
 
     // const resUniveristy = fetch(`http://localhost:1337/usa-universities`)
@@ -40,6 +44,7 @@ export async function getStaticProps() {
     return {
         props: {
             students: students,
+            degrees: degrees
             // univeristy: univeristy
 
         }

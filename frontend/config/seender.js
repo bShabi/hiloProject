@@ -38,24 +38,38 @@ const importData = async () => {
 }
 const importDegrees = async () => {
     const data = await CSVTOJSON().fromFile('degrees.csv')
-    console.log();
 
-    for (let index = 0; index < data.length; index++) {
-        const postUser = data[index].Degrees
-        const strapiRes = await fetch(`http://localhost:1337/DEGREES`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                Degrees: postUser.Degrees,
+    // for (let index = 0; index < 2; index++) {
+    //     const postUser = data[index].Degrees
+    //     console.log(postUser);
+    const postUser = data[1].Degrees
 
-            }),
+    // const strapiRes = await fetch(`http://localhost:1337/DEGREES`, {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //         degree: postUser.Degrees,
 
-        }).then((result) => {
-            console.log("Success");
+    //     }),
+    // })
+    // const res = await strapiRes.json()
+    // console.log(res);
+
+    //     }).then((result) => {
+    //         console.log(result);
+    //     })
+    //}
+
+    axios
+        .post('http://localhost:1337/DEGREES', {
+            degree: postUser.Degrees,
+
         })
-    }
+        .then(response => {
+            console.log(response);
+        });
 
 }
 // importData()

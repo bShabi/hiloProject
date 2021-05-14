@@ -7,56 +7,47 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 // import AuthContext from '@/context/AuthContext'
 import styles from '@/styles/AuthForm.module.css'
+import SliderLogin from '@/components/Login/SliderLogin'
+import SliderCreateAccount from '@/components/SignUp/SliderCreateAccount'
+import SignIn from '@/components/Login/SignIn'
+import { API_URL } from '@/config/index'
 
-export default function LoginPage() {
 
-
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    // const { login, error } = useContext(AuthContext)
-
-    // useEffect(() => error && toast.error(error))
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        // login({ email, password })
-    }
-
+export default function SignUpPage({ students, degrees }) {
+    // console.log(degrees);
     return (
         <Layout title='User Login'>
-            <div className={styles.auth}>
-                <h1>
-                    <FaUser /> Log In
-        </h1>
-                <ToastContainer />
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor='email'>Email Address</label>
-                        <input
-                            type='email'
-                            id='email'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='password'>Password</label>
-                        <input
-                            type='password'
-                            id='password'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-
-                    <input type='submit' value='Login' className='btn' />
-                </form>
-
-                <p>
-                    Don't have an account? <Link href='/account/register'>Register</Link>
-                </p>
+            {/* {Login Sider} */}
+            <div className={styles.wrapper}>
+                <div className={styles.SliderLogin}>
+                    <SliderLogin />
+                </div>
+                <div className={styles.SliderCreateAccount}>
+                    <SignIn />
+                </div>
             </div>
         </Layout>
     )
+}
+export async function getStaticProps() {
+
+
+    const resStudent = await fetch(`http://localhost:1337/students`)
+    const students = await resStudent.json()
+
+    const resDegree = await fetch(`http://localhost:1337/degrees`)
+    const degrees = await resDegree.json()
+    // // Get All univeristies {limit == 1000}
+
+    // const resUniveristy = fetch(`http://localhost:1337/usa-universities`)
+    // const univeristy = resUniveristy.json()
+    // const univeristy = await resUniveristy.json()
+    return {
+        props: {
+            students: students,
+            degrees: degrees
+            // univeristy: univeristy
+
+        }
+    }
 }

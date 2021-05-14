@@ -29,10 +29,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/account/login.js"
     ],
-    "/account/signup": [
+    "/account/resertpassowrd": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/account/signup.js"
+      "static/chunks/pages/account/resertpassowrd.js"
     ]
   },
   "ampFirstPages": []
