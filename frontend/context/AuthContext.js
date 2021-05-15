@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
 
     //  Login User 
-    const login = async ({ email: identifier, password }) => {
+    const login = async ({ userName: identifier, password }) => {
         const res = await fetch(`${NEXT_URL}/api/login`, {
             method: 'POST',
             headers: {
@@ -53,6 +53,7 @@ export const AuthProvider = ({ children }) => {
         const data = await res.json()
 
         if (res.ok) {
+            console.log("ok");
             setUser(data.user)
             router.push('/')
         } else {

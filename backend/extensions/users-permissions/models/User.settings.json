@@ -58,6 +58,22 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "fullname": {
+      "type": "string"
+    },
+    "isStudent": {
+      "type": "boolean",
+      "default": false
+    },
+    "isMentor": {
+      "type": "boolean"
+    },
+    "graduaction": {
+      "type": "date"
+    },
+    "usa_university": {
+      "model": "usa-universities"
     }
   }
 }

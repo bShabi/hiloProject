@@ -25,7 +25,7 @@ export default function CreateMentorSlide(students) {
     const [experise, setExperise] = useState('')
     const [service, setService] = useState('')
     const [aboutMentor, setAboutMentor] = useState('')
-    const [picture, setPicture] = useState(false)
+    const [mentorIMG, setMentorIMG] = useState()
     const [showModal, setShowModal] = useState(false)
 
     const [stepRegister, setStepRegister] = useState(3)
@@ -167,13 +167,14 @@ export default function CreateMentorSlide(students) {
                         value={aboutMentor}
                         onChange={(e) => setAboutMentor(e.target.value)}
                     />
-                    {/* <Modal show={showModal} onClose={() => setShowModal(false)}>
-                        <ImageUpload
-                            // evtId={evt.id}
-                            imageUploaded={imageUploaded}
-                        // token={token}
-                        />
-                    </Modal> */}
+                    <input
+                        placeholder='Upload Best Pic'
+                        type='file'
+                        id='image'
+                        value={mentorIMG}
+                        onChang={(e) => setMentorIMG(e.target.value)}
+                    />
+
 
                 </div>
             </div >

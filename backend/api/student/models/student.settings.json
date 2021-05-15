@@ -12,41 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "password": {
-      "type": "password",
-      "required": true,
-      "minLength": 6,
-      "maxLength": 10
-    },
-    "fullname": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
-      "type": "email",
-      "required": true
-    },
-    "university": {
-      "type": "string"
-    },
-    "graduation": {
-      "type": "datetime"
-    },
-    "isStudent": {
-      "type": "boolean",
-      "default": true,
-      "required": true
-    },
-    "isDegree": {
-      "type": "boolean"
-    },
     "slug": {
       "type": "uid",
       "required": true
     },
-    "role": {
+    "users_permissions_user": {
       "plugin": "users-permissions",
-      "model": "role"
+      "model": "user"
     }
   }
 }

@@ -18,14 +18,32 @@
     "mentor": {
       "model": "mentor"
     },
-    "steps": {
-      "type": "enumeration",
-      "enum": [
-        "steps"
-      ]
-    },
     "summary": {
       "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "catagorey": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "steps": {
+      "type": "json"
+    },
+    "numofsteps": {
+      "type": "integer"
     }
   }
 }
