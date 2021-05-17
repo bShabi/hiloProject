@@ -15,16 +15,19 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => checkUserLoggedIn(), [])
 
     const register = async (user) => {
+
         const res = await fetch(`${NEXT_URL}/api/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify(user),
         })
 
         const data = await res.json()
-
+        console.log("data", res.data)
+        console.log("data", data)
         if (res.ok) {
             setUser(data.user)
             router.push('/')

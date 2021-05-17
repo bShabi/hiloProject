@@ -12,7 +12,7 @@ import SliderCreateAccount from '@/components/SignUp/SliderCreateAccount'
 import { API_URL } from '@/config/index'
 
 
-export default function SignUpPage({ students, degrees }) {
+export default function SignUpPage() {
     // console.log(degrees);
     return (
         <Layout title='User Login'>
@@ -22,7 +22,7 @@ export default function SignUpPage({ students, degrees }) {
                     <SliderLogin />
                 </div>
                 <div className={styles.SliderCreateAccount}>
-                    <SliderCreateAccount student={students} degrees={degrees} />
+                    <SliderCreateAccount />
                 </div>
             </div>
         </Layout>
@@ -32,10 +32,10 @@ export async function getStaticProps() {
 
 
     const resStudent = await fetch(`http://localhost:1337/students`)
-    const students = await resStudent.json()
+    const students = []
 
     const resDegree = await fetch(`http://localhost:1337/degrees`)
-    const degrees = await resDegree.json()
+    const degrees = []
     // // Get All univeristies {limit == 1000}
 
     // const resUniveristy = fetch(`http://localhost:1337/usa-universities`)

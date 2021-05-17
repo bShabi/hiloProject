@@ -59,21 +59,9 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "fullname": {
-      "type": "string"
-    },
-    "isStudent": {
-      "type": "boolean",
-      "default": false
-    },
-    "isMentor": {
-      "type": "boolean"
-    },
-    "graduaction": {
-      "type": "date"
-    },
-    "usa_university": {
-      "model": "usa-universities"
+    "students": {
+      "via": "users_permissions_user",
+      "collection": "students"
     }
   }
 }

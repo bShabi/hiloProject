@@ -2,72 +2,86 @@
 import { FaUser } from 'react-icons/fa'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
-// import AuthContext from '@/context/AuthContext'
+import AuthContext from '@/context/AuthContext'
 import styles from '@/styles/AuthForm.module.css'
 
-export default function CreateStudentSlid(students) {
+export default function CreateStudentSlid() {
 
 
     // All Students from account/signUp
     const [usersStudents, setUserStudent] = useState("ben")
 
-    const [fullName, setFullName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [user, setUser] = useState('')
-    const [university, setUniversity] = useState('')
-    const [graduation, setGraduation] = useState('')
-    const [degree, setDegree] = useState(false)
+    const [fullName, setFullName] = useState('localtest')
+    const [email, setEmail] = useState('localtest@gmail.edu')
+    const [password, setPassword] = useState('localtest')
+    const [username, setUsername] = useState('localtest')
+    const [university, setUniversity] = useState('Tel aviv')
+    const [graduation, setGraduation] = useState('10-10-2020')
+    const [degree, setDegree] = useState('Master')
 
     const [stepRegister, setStepRegister] = useState(1)
 
-    // const { login, error } = useContext(AuthContext)
-    useEffect(() => {
-        const AllUsers = students.students.map(user => user.slug)
-        setUserStudent(AllUsers)
-    }, [students])
+    const { register, error } = useContext(AuthContext)
+    // useEffect(() => {
+    //     const AllUsers = students.students.map(user => user.slug)
+    //     setUserStudent(AllUsers)
+    // }, [students])
     // useEffect(() => error && toast.error(error))
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const patternFullName = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
-        const patternEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+(\.edu)$/;
-        const patternPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        // const patternFullName = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
+        // const patternEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+(\.edu)$/;
+        // const patternPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
 
-        if (!fullName || !email) {
-            console.log("Error 1");
-            return
+        // if (!fullName || !email) {
+        //     console.log("Error 1");
+        //     return
+        // }
+        // if (!patternFullName.test(fullName)) {
+        //     console.log("inValid full name");
+        //     return
+        // }
+        // if (!patternEmail.test(email)) {
+        //     console.log("invalid email(edu)");
+        //     return
+        // }
+        // setStepRegister(2)
+        // // Check Step Level Two
+        // if (!username || !password) {
+        //     console.log("error 4");
+        //     return
+        // }
+        // if (usersStudents.includes(username)) {
+        //     console.log("username include");
+        //     return
+        // }
+        // if (!patternPassword.test(password)) {
+        //     console.log("password incorrect");
+        //     return
+        // }
+        // setStepRegister(3)
+        const user = {
+            FullName: fullName,
+            Email: email,
+            Password: password,
+            Username: username,
+            isStudent: true,
+            isMentor: false,
+            Graduation: graduation,
+            Degree: degree
         }
-        if (!patternFullName.test(fullName)) {
-            console.log("inValid full name");
-            return
-        }
-        if (!patternEmail.test(email)) {
-            console.log("invalid email(edu)");
-            return
-        }
-        setStepRegister(2)
-        // Check Step Level Two
-        if (!user || !password) {
-            console.log("error 4");
-            return
-        }
-        if (usersStudents.includes(user)) {
-            console.log("User include");
-            return
-        }
-        if (!patternPassword.test(password)) {
-            console.log("password incorrect");
-            return
-        }
-        setStepRegister(3)
+        register(user)
 
     }
 
+    const validataion = () => {
+
+    }
 
     // Suggestions for univeristies from All Students
 
@@ -108,8 +122,8 @@ export default function CreateStudentSlid(students) {
                         placeholder='User Name'
                         type='text'
                         id='user'
-                        value={user}
-                        onChange={(e) => setUser(e.target.value)}
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                     <h3>And a password</h3>
                     <input
@@ -148,8 +162,8 @@ export default function CreateStudentSlid(students) {
                         placeholder='Degree'
                         type='text'
                         id='fullname'
-                        value={graduation}
-                        onChange={(e) => setGraduation(e.target.value)}
+                        value={degree}
+                        onChange={(e) => setDegree(e.target.value)}
                     />
 
                 </div>
@@ -174,6 +188,10 @@ export default function CreateStudentSlid(students) {
                     <input type='submit' value='Im done' className='btn' />
                 }
             </form>
+            {error &&
+                <div>
+                    {error}
+                </div>}
 
             <p>
                 Already have an account? <Link href='/account/login'>Signin</Link>

@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -23,14 +23,13 @@
     "strapi-plugin-i18n": "3.6.0",
     "strapi-plugin-upload": "3.6.0",
     "strapi-plugin-users-permissions": "3.6.0",
-    "strapi-provider-upload-cloudinary": "^3.6.1",
     "strapi-utils": "3.6.0"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "3ffb4bc6-cef1-47d9-ab90-a7f6cea5069f"
+    "uuid": "78ded194-c426-421b-8462-1f2fd1ddb006"
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",

@@ -1,45 +1,72 @@
 import cookie from 'cookie'
 import { API_URL } from '@/config/index'
+import axios from 'axios'
 
 export default async (req, res) => {
     if (req.method === 'POST') {
-        const { username, email, password } = req.body
 
-        const strapiRes = await fetch(`${API_URL}/auth/local/register`, {
+        const { FullName, Email, Password, Username, isMentor, Graduation, Degree, isStudent } = req.body
+
+
+        // Create User in Collection Type { User}
+
+        const graphqlQuery = {
+            query: `mutation register($email: String! , $username: String!, $password: String!) {
+                    register(input: {email: $email, username: $username , password: $password}) {
+                        user {id,username,email},jwt
+                    }
+                }
+                  `,
+            variables: {
+                email: Email,
+                password: Password,
+                username: Username,
+            }
+        }
+        const postUser = await fetch(`${API_URL}/graphql`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(graphqlQuery),
+        })
+        // End Section Create User
+        const postUserData = await postUser.json()
+
+
+        // Create User in Collection Type { Students}
+
+        const getUserID = await fetch(`${API_URL}/auth/local`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username,
-                email,
-                password,
+                identifier: Username,
+                password: Password,
             }),
         })
+        const idUser = await getUserID.json()
 
-        const data = await strapiRes.json()
+        // Start Section Create Students
 
-        if (strapiRes.ok) {
-            // Set Cookie
-            res.setHeader(
-                'Set-Cookie',
-                cookie.serialize('token', data.jwt, {
-                    httpOnly: true,
-                    secure: process.env.NODE_ENV !== 'development',
-                    maxAge: 60 * 60 * 24 * 7, // 1 week
-                    sameSite: 'strict',
-                    path: '/',
-                })
-            )
+        axios
+            .post('http://localhost:1337/students', {
 
-            res.status(200).json({ user: data.user })
-        } else {
-            res
-                .status(data.statusCode)
-                .json({ message: data.message[0].messages[0].message })
-        }
-    } else {
-        res.setHeader('Allow', ['POST'])
-        res.status(405).json({ message: `Method ${req.method} not allowed` })
+                fullname: FullName,
+                degree: Degree,
+                graduation: Graduation,
+                users_permissions_user: {
+                    id: idUser.user.id
+                }
+
+            })
+            .then(response => {
+                console.log(response);
+            });
+
+
     }
+
+
 }

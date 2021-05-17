@@ -13,7 +13,7 @@ import SignIn from '@/components/Login/SignIn'
 import { API_URL } from '@/config/index'
 
 
-export default function SignUpPage({ students, degrees }) {
+export default function SignUpPage() {
     // console.log(degrees);
     return (
         <Layout title='User Login'>
@@ -29,25 +29,25 @@ export default function SignUpPage({ students, degrees }) {
         </Layout>
     )
 }
-export async function getStaticProps() {
+// export async function getStaticProps() {
 
 
-    const resStudent = await fetch(`http://localhost:1337/students`)
-    const students = await resStudent.json()
+//     const resStudent = await fetch(`http://localhost:1337/students`)
+//     const students = await resStudent.json()
 
-    const resDegree = await fetch(`http://localhost:1337/degrees`)
-    const degrees = await resDegree.json()
-    // // Get All univeristies {limit == 1000}
+//     const resDegree = await fetch(`http://localhost:1337/degrees`)
+//     const degrees = await resDegree.json()
+//     // // Get All univeristies {limit == 1000}
 
-    // const resUniveristy = fetch(`http://localhost:1337/usa-universities`)
-    // const univeristy = resUniveristy.json()
-    // const univeristy = await resUniveristy.json()
-    return {
-        props: {
-            students: students,
-            degrees: degrees
-            // univeristy: univeristy
+//     // const resUniveristy = fetch(`http://localhost:1337/usa-universities`)
+//     // const univeristy = resUniveristy.json()
+//     // const univeristy = await resUniveristy.json()
+//     return {
+//         props: {
+//             students: students,
+//             degrees: degrees
+//             // univeristy: univeristy
 
-        }
-    }
-}
+//         }
+//     }
+// }
