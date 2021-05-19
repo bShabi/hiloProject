@@ -14,13 +14,13 @@ export default function CreateStudentSlid() {
     // All Students from account/signUp
     const [usersStudents, setUserStudent] = useState("ben")
 
-    const [fullName, setFullName] = useState('localtest')
-    const [email, setEmail] = useState('localtest@gmail.edu')
-    const [password, setPassword] = useState('localtest')
-    const [username, setUsername] = useState('localtest')
-    const [university, setUniversity] = useState('Tel aviv')
-    const [graduation, setGraduation] = useState('10-10-2020')
-    const [degree, setDegree] = useState('Master')
+    const [fullName, setFullName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('')
+    const [university, setUniversity] = useState(' ')
+    const [graduation, setGraduation] = useState('')
+    const [degree, setDegree] = useState('')
 
     const [stepRegister, setStepRegister] = useState(1)
 
@@ -33,49 +33,51 @@ export default function CreateStudentSlid() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // const patternFullName = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
-        // const patternEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+(\.edu)$/;
-        // const patternPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        const patternFullName = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
+        const patternEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+(\.edu)$/;
+        const patternPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
 
-        // if (!fullName || !email) {
-        //     console.log("Error 1");
-        //     return
-        // }
-        // if (!patternFullName.test(fullName)) {
-        //     console.log("inValid full name");
-        //     return
-        // }
-        // if (!patternEmail.test(email)) {
-        //     console.log("invalid email(edu)");
-        //     return
-        // }
-        // setStepRegister(2)
-        // // Check Step Level Two
-        // if (!username || !password) {
-        //     console.log("error 4");
-        //     return
-        // }
-        // if (usersStudents.includes(username)) {
-        //     console.log("username include");
-        //     return
-        // }
-        // if (!patternPassword.test(password)) {
-        //     console.log("password incorrect");
-        //     return
-        // }
-        // setStepRegister(3)
-        const user = {
-            FullName: fullName,
-            Email: email,
-            Password: password,
-            Username: username,
-            isStudent: true,
-            isMentor: false,
-            Graduation: graduation,
-            Degree: degree
+        if (!fullName || !email) {
+            console.log("Error 1");
+            return
         }
-        register(user)
+        if (!patternFullName.test(fullName)) {
+            console.log("inValid full name");
+            return
+        }
+        if (!patternEmail.test(email)) {
+            console.log("invalid email(edu)");
+            return
+        }
+        setStepRegister(2)
+        // Check Step Level Two
+        if (!username || !password) {
+            console.log("error 4");
+            return
+        }
+        if (usersStudents.includes(username)) {
+            console.log("username include");
+            return
+        }
+        if (!patternPassword.test(password)) {
+            console.log("password incorrect");
+            return
+        }
+        setStepRegister(3)
+        if (stepRegister === 3) {
+            const user = {
+                FullName: fullName,
+                Email: email,
+                Password: password,
+                Username: username,
+                isStudent: true,
+                isMentor: false,
+                Graduation: graduation,
+                Degree: degree
+            }
+            register(user)
+        }
 
     }
 

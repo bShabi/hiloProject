@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mentors",
+  "info": {
+    "name": "Mentor",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullname": {
+      "type": "string"
+    },
+    "about": {
+      "type": "richtext"
+    },
+    "service": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "experise": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "fullname"
+    },
+    "users_permissions_user": {
+      "via": "mentors",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

@@ -60,8 +60,15 @@
       "configurable": false
     },
     "students": {
-      "via": "users_permissions_user",
-      "collection": "students"
+      "collection": "students",
+      "via": "users_permissions_user"
+    },
+    "mentors": {
+      "collection": "mentor",
+      "via": "users_permissions_user"
+    },
+    "fullname": {
+      "type": "string"
     }
   }
 }

@@ -1,15 +1,15 @@
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
 import { FaUser } from 'react-icons/fa'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Link from 'next/link'
 // import Modal from '@/components/Modal'
-// import AuthContext from '@/context/AuthContext'
+import AuthContext from '@/context/AuthContext'
 import styles from '@/styles/AuthForm.module.css'
 import ImageUpload from '@/components/ImageUpload'
 
-export default function CreateMentorSlide(students) {
+export default function CreateMentorSlide() {
 
 
 
@@ -18,18 +18,18 @@ export default function CreateMentorSlide(students) {
     // All Students from account/signUp
     const [usersStudents, setUserStudent] = useState('')
 
-    const [fullName, setFullName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [user, setUser] = useState('')
-    const [experise, setExperise] = useState('')
-    const [service, setService] = useState('')
-    const [aboutMentor, setAboutMentor] = useState('')
+    const [fullName, setFullName] = useState('Ben ShabiMentor')
+    const [email, setEmail] = useState('Bshabi@gmai.edu')
+    const [password, setPassword] = useState('Aa123456')
+    const [username, setUsername] = useState('Mentor')
+    const [experise, setExperise] = useState('balblalba ')
+    const [service, setService] = useState('sss')
+    const [aboutMentor, setAboutMentor] = useState('ssssadasd')
     const [mentorIMG, setMentorIMG] = useState()
-    const [showModal, setShowModal] = useState(false)
 
     const [stepRegister, setStepRegister] = useState(3)
 
+    const { register, error } = useContext(AuthContext)
 
 
     // const imageUploaded = async (e) => {
@@ -40,46 +40,62 @@ export default function CreateMentorSlide(students) {
     //     setShowModal(false)
     // }
 
-    useEffect(() => {
-        const AllUsers = students.students.map(user => user.slug)
-        setUserStudent(AllUsers)
-    }, [students])
+    // useEffect(() => {
+    //     const AllUsers = students.students.map(user => user.slug)
+    //     setUserStudent(AllUsers)
+    // }, [students])
     // useEffect(() => error && toast.error(error))
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const patternFullName = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
-        const patternEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+(\.edu)$/;
-        const patternPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        // const patternFullName = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
+        // const patternEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+(\.edu)$/;
+        // const patternPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
 
-        if (!fullName || !email) {
-            console.log("Error 1");
-            return
+        // if (!fullName || !email) {
+        //     console.log("Error 1");
+        //     return
+        // }
+        // if (!patternFullName.test(fullName)) {
+        //     console.log("inValid full name");
+        //     return
+        // }
+        // if (!patternEmail.test(email)) {
+        //     console.log("invalid email(edu)");
+        //     return
+        // }
+        // setStepRegister(2)
+        // // Check Step Level Two
+        // if (!username || !password) {
+        //     console.log("error 4");
+        //     return
+        // }
+        // if (usersStudents.includes(username)) {
+        //     console.log("User include");
+        //     return
+        // }
+        // if (!patternPassword.test(password)) {
+        //     console.log("password incorrect");
+        //     return
+        // }
+        // setStepRegister(3)
+        //     experitse services about pic
+        if (stepRegister === 3) {
+            const user = {
+                FullName: fullName,
+                Email: email,
+                Password: password,
+                Username: username,
+                isStudent: false,
+                isMentor: true,
+                Experise: experise,
+                AboutMentor: aboutMentor,
+                Service: service,
+                Pic: mentorIMG
+            }
+            register(user)
         }
-        if (!patternFullName.test(fullName)) {
-            console.log("inValid full name");
-            return
-        }
-        if (!patternEmail.test(email)) {
-            console.log("invalid email(edu)");
-            return
-        }
-        setStepRegister(2)
-        // Check Step Level Two
-        if (!user || !password) {
-            console.log("error 4");
-            return
-        }
-        if (usersStudents.includes(user)) {
-            console.log("User include");
-            return
-        }
-        if (!patternPassword.test(password)) {
-            console.log("password incorrect");
-            return
-        }
-        setStepRegister(3)
 
     }
 
@@ -124,8 +140,8 @@ export default function CreateMentorSlide(students) {
                         placeholder='User Name'
                         type='text'
                         id='user'
-                        value={user}
-                        onChange={(e) => setUser(e.target.value)}
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                     <h3>And a password</h3>
                     <input
@@ -172,7 +188,7 @@ export default function CreateMentorSlide(students) {
                         type='file'
                         id='image'
                         value={mentorIMG}
-                        onChang={(e) => setMentorIMG(e.target.value)}
+                        onChange={(e) => setMentorIMG(e.target.value)}
                     />
 
 

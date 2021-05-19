@@ -22,9 +22,9 @@
       "type": "string"
     },
     "users_permissions_user": {
+      "via": "students",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "students"
+      "model": "user"
     }
   }
 }
