@@ -4,6 +4,7 @@ import Layout from './Layout'
 
 
 // Good Luck //
+// Good Luck2 //
 export default function Footer() {
     return (
         <footer className={style.Footer}>
