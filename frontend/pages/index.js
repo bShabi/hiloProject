@@ -2,6 +2,7 @@ import sliderStyle from '@/styles/Slider.module.css'
 import Slider from '@/components/Slider'
 import Layout from '@/components/Layout'
 import HeadConent from '@/components/HeadContent'
+import Footer from '@/components/Footer'
 
 export default function HomePage() {
   return (
@@ -16,9 +17,7 @@ export default function HomePage() {
           btn1="Mentors"
           btn2="Tips & Hacks"
         />
-      </Layout>
-      {/* Sliders */}
-      <div className={sliderStyle.swiperContainer}>
+              <div className={sliderStyle.swiperContainer}>
         <div className={sliderStyle.main}>
           <Slider name={'example'} />
         </div>
@@ -27,7 +26,10 @@ export default function HomePage() {
         <div className={sliderStyle.main}>
           <Slider />
         </div>
-      </div>
+      </div>   
+         </Layout>
+      {/* Sliders */}
+
     </>
   )
 }
