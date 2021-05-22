@@ -1,35 +1,67 @@
 .Footer {
   background-color: #F6F9FF;
   padding: 70px 0;
+  
 
 }
 
 .container {
-	max-width: 1170px;
-	margin:auto;
+	max-width: 80%;
+	margin: auto;
+	
+	
+}
+
+.container .footerCol2 {
+	max-width: 80%;
+	
+	
 }
 
 .row {
 	display: flex;
 	flex-wrap: wrap;
+	
 }
+
 
 .footerCol ul {
 	list-style: none;
 }
 
 .footerCol {
-  width: 30%;
+  width: 20%;
   padding: 0 15px;
+ 
   
 }
 
-.footerCol h3 {
-  font-size: 22px;
+.footerCol2 {
+	width: 40%;
+	padding: 0 15px;
+	
+  }
+
+.footerCol2 i{
+	text-transform: lowercase; 
+	
+}
+  .footerCol2 h3 {
+	font-size: 15px;
 	color: #000358;
 	text-transform: capitalize;
 	font-weight: 500;
 	position: relative;
+	font-weight: bold;
+	
+  }
+
+.footerCol h3 {
+  font-size: 15px;
+  color: #000358;
+  text-transform: capitalize;
+  font-weight: 500;
+  position: relative;
   font-weight: bold;
   
 }
@@ -40,14 +72,26 @@
 	text-transform: capitalize;
 	margin-bottom: 35px;
 	font-weight: bold;
-	position: relative;
+   position: relative;
   padding: top 15px;
   
 }
 
+.footerCol2 h2 {
+	font-size: 25px;
+	  color: #000358;
+	  text-transform: capitalize;
+	  margin-bottom: 35px;
+	  font-weight: bold;
+	 position: relative;
+	padding: top 15px;
+	
+	
+  }
+
 .footerCol h4 {
-  font-size: 15px;
-	color: #458CFE;
+  font-size: 16px;
+	color: #000358;
 	text-transform: capitalize;
 	margin-bottom: 35px;
 	font-weight: bold;
@@ -56,17 +100,30 @@
   
 }
 
+.footerCol2 h4 {
+	font-size: 16px;
+	  color: #000358;
+	  text-transform: capitalize;
+	  margin-bottom: 35px;
+	  font-weight: bold;
+	  position: relative;
+	padding: top 15px;
+	
+	
+  }
+
 .footerCol ul li a{
 	font-size: 16px;
 	text-transform: capitalize;
 	color: #000358;
 	text-decoration: none;
-	font-weight:bolder;
 	display: block;
 	transition: all 0.3s ease;
 }
 
-.footerCol .socialLinks a{
+
+
+.footerCol2 .socialLinks a{
 	display: inline-block;
 	height: 40px;
 	width: 40px;
@@ -76,6 +133,7 @@
 	line-height: 40px;
 	color: #ffffff;
 	transition: all 0.5s ease;
+	
 }
 
 .footerCol .socialLinks a:hover{
@@ -83,3 +141,28 @@
 	background-color: #ffffff;
 }
 
+
+
+/*responsive*/
+@media(max-width: 767px){
+	.footer-col{
+	  width: 50%;
+	  margin-bottom: 30px;
+  }
+  .footer-col2{
+	width: 50%;
+	margin-bottom: 30px;
+}
+  }
+  @media(max-width: 574px){
+	.footer-col{
+	  width: 100%;
+  }
+  .footer-col2{
+	width: 50%;
+	margin-bottom: 30px;
+}
+  }
+  
+
+  
