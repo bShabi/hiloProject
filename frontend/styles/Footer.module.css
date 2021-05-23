@@ -145,24 +145,31 @@
 
 /*responsive*/
 @media(max-width: 767px){
-	.footer-col{
-	  width: 50%;
-	  margin-bottom: 30px;
+	.row{
+		text-align: center;
+		width: 100%;
   }
   .footer-col2{
-	width: 50%;
-	margin-bottom: 30px;
+	text-align: center;
+	  width: 100%;
 }
   }
   @media(max-width: 574px){
 	.footer-col{
-	  width: 100%;
+		text-align: center;
+		width: 100%;
   }
   .footer-col2{
-	width: 50%;
-	margin-bottom: 30px;
+	text-align: center;
+	  width: 100%;
 }
   }
   
+  @media (max-width: 426px) {
+	.Footer {
+	  text-align: center;
+	  width: 100%;
+	}
 
   
+  }

@@ -8,8 +8,13 @@ export default function Navbar() {
   return (
     <header className={style.header} id="header">
       <div className={style.logo}>
-        {/* <Link href='/'>
-                </Link> */}
+         
+               <Image
+                    src="/HiLo-logo.png"
+                    alt="HiLo-logo"
+                    width={50}
+                    height={50}
+                 />
       </div>
       <nav className={style.navbar}>
         <div className={style.center}>
@@ -18,47 +23,46 @@ export default function Navbar() {
           </button>
         </div>
         <ul className={style.navUl} id="nav-ul">
-          <li>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>Life Tips & Hacks</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/mentors">
-              <a>Mentors</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>Join Us</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>About</a>
-            </Link>
-          </li>
-          {/* Sign up Button  */}
-          <li className={style.btnSignin}>
-            <Link href="/account/signup">
-              <a className="btn-secondary btn-icon">
-                <FaSignInAlt /> Join HiLo
+            <li>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a>Life Tips & Hacks</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/mentors">
+                <a>Mentors</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a>Join Us</a>
+              </Link>
+            </li>
+            <li>
+              <a href="/">
+                <a>About</a>
               </a>
-            </Link>
-          </li>
-          {/* Login Button */}
-          <li className={style.btnLogin}>
-            <Link href="/account/login">
-              <a className="btn-secondary btn-icon">
-                Log in
-              </a>
-            </Link>
-          </li>
+            </li>
+
+             {/* Login Button */}
+             <li className={style.btnLogin}> 
+            <a href="/account/login"> Log in</a>
+            </li>
+
+            {/* Sign up Button  */}
+        
+            <li className={style.btnSignin}> 
+            <a href="/account/signup"> Join HiLo</a>
+            </li>
+
+           
+             
+            
         </ul>
       </nav>
     </header>

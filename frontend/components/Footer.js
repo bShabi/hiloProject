@@ -1,5 +1,6 @@
 import style from '@/styles/Footer.module.css'
 import Layout from './Layout'
+import Image from 'next/image'
 
 
 // Good Luck 3 //
@@ -14,10 +15,14 @@ export default function Footer() {
                <div className={style.row}>
 
                <div className={style.footerCol}>
-                
-                  <img src="public/images/demo-pic.jpg" alt="logo" />
+                        
+                  <Image
+                    src="/HiLo-logo.png"
+                    alt="HiLo-logo"
+                    width={150}
+                    height={100}
+                 />
                  
-
               </div>
                <div className={style.footerCol}>
                     <ul>

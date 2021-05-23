@@ -2,51 +2,71 @@
   display: flex;
   text-align: left;
   align-items: center;
-  font-family: 'Montserrat';
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 1.4px;
-  letter-spacing: 0.6;
+  letter-spacing: 1;
   background: #fff;
   color: #000358;
   height: 60px;
-  padding: 0 30px;
+  padding: 0 40px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
 }
 
 .header a {
-  color: #333;
-  margin-right: 20px;
+
+  text-decoration: none;
+  margin-right: 48px;
+  
 }
 
-.header a:hover {
-  color: #000;
-}
+
+
 .header ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   list-style: none;
+  color: #000358;
+  font-size: 17px;
+  
 }
 
-.logo {
-  color: red;
-  font-size: 20px;
-  text-transform: uppercase;
+.navUl a {
+  color: #000358;
+  text-decoration: none;
+  border: none;
+
 }
 
-.logo a {
-  color: red;
+.navUl a:hover {
+  text-decoration: underline;
 }
 
-.btnLogin {
-  position: absolute;
-  right: 100px;
+.btnLogin a {
+  padding-left: 835px;
+  text-align: right;
+  text-transform: capitalize;
+  color: #000358;
+  text-decoration: none;
+  font-size: 15px;
+ 
 }
-.btnSignin {
-  position: absolute;
-  right: 0;
+
+
+.btnSignin a {
+  color: #fff;
+  background: #000358;
+  border: none;
+  padding: 5px 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  text-align: right;
+ 
+
 }
 
 .hamburger {
@@ -60,6 +80,8 @@
 .hamburger:focus {
   outline: none;
 }
+
+
 
 @media (max-width: 426px) {
   .navbar {
@@ -78,19 +100,6 @@
     justify-content: center;
     display: block;
   }
-  ul.navUl {
-    display: none;
-    flex-direction: column;
-  }
-  .navUl.show {
-    display: flex;
-    flex-direction: column;
-  }
-  .header.show {
-    height: 200px;
-  }
-  .header ul {
-    height: 100px;
-    justify-content: space-between;
-  }
+
+
 }
