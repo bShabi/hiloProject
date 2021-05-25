@@ -12,5 +12,10 @@ module.exports = ({ env }) => ({
       delete: {},
     },
   },
+  providerOptions: {
+    localServer: {
+      maxage: 300000
+    }
+  }
   // ...
 });
