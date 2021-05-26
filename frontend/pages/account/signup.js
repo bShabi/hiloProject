@@ -18,6 +18,7 @@ export default function SignUpPage() {
         <Layout title='User Login'>
             {/* {Login Sider} */}
             <div className={styles.wrapper}>
+                <h2>logindsd</h2>
                 <div className={styles.SliderLogin}>
                     <SliderLogin />
                 </div>

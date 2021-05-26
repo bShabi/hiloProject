@@ -26,39 +26,59 @@ export default function LoginPage() {
     return (
         <div className={styles.auth}>
             <h1>
-                <FaUser /> Sign in
+                {/* <FaUser /> Sign in */}
+                Login
         </h1>
             <ToastContainer />
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className={styles.input}>
+                <i class="far fa-id-badge"></i>
                     <input
-                        placeholder='User Name'
+                        placeholder=' Username'
                         type='text'
                         id='email'
                         value={userName}
                         onChange={(e) => setUserName(e.target.value)}
-                    />
+                        className={styles.inputText}
+                        
+                   />
                 </div>
-                <div>
+                
+                    <i class="fa fa-lock"></i>
                     <input
-                        placeholder='Passowrd'
+                        placeholder=' Passowrd'
                         type='password'
                         id='password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        className={styles.inputText}
                     />
-                </div>
+                <div className={styles.subText}>
+                <h3>Or login with</h3><br></br>
+                    <div className={styles.socialLinks}>
+                    <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-google fa-2x"></i></a>
+  	 				<a href="#"><i class="fab fa-apple fa-2x"></i></a>
+  	 				
+                    </div>
+                </div>    
+                
 
-                <input type='submit' value='Login' className='btn' />
+                <input type='submit' value='Next' className={styles.btn} />
             </form>
+            <div className={styles.p}>
 
             <p>
-                Don't have an account? <Link href='/account/signup'>Register</Link>
+                Don't have an account? <Link href='/account/signup'>Sign Up</Link>
             </p>
 
             <p>
-                Forgot Password? <Link href='/account/resertpassowrd'>Reset Password</Link>
+                Forgot your password? <Link href='/account/resertpassowrd'>Reset your Password</Link>
             </p>
+            </div>
+           
+           
+
         </div>
     )
 }

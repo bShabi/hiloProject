@@ -1,16 +1,106 @@
+.auth {
+  background-color: #FFFFFF;
+  width:599px;
+  height: 656px;
+  padding: 50px 40px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 4px 4px #C6C1C1;
+  border-radius: 10%;
+ 
+}
+
+ .auth h1 {
+    font-size: 45px ;
+    margin: 0 0 24px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     padding-top: 15px;
+}
+
+.inputText{
+  background: whitesmoke;
+  border-radius: 5%;
+  width: 75%;
+  padding-top: 10px;
+  margin: 5%;
+  border-style: none;
+  box-shadow: 0px 5px 5px gray;
+ 
+}
+
+
+.inputText i {
+  float: left;
+}
+
+.btn{
+  color: #fff;
+  background: #000358;
+  border: none;
+  padding: 5px 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 30%;
+  font-weight: bold;
+  margin: 5%;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   padding: 5em;
+  background-color: #E7F0FF;
+}
+
+.p {
+  font-size: 16px;
+	
+	color: #000358;
+ font-weight: bold;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.subText{
+  font-size: 16px;
+	color: #000358;
+	display: block;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.subText h3{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.socialLinks a{
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	background-color: #458CFE;;
+	margin:0 20px 10px 0;
+	text-align: center;
+	line-height: 60px;
+	color: #ffffff;
+	transition: all 0.5s ease;
+	
+}
+.socialLinks a:hover{
+	color: #24262b;
+	background-color: #ffffff;
 }
 
 .SliderLogin {
   text-align: center;
   margin: auto;
+  width: 50%;
 }
 
 .SliderCreateAccount {
   text-align: center;
   margin: auto;
+  width: 100%;
 }
