@@ -16,6 +16,12 @@ body {
   background-color: var(--bglight);
 }
 
+body .coll {
+
+  margin: 0;
+  background: rgba(196, 217, 255, 0.4);
+}
+
 a {
   text-decoration: none;
   color: steelblue;
