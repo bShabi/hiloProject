@@ -18,4 +18,17 @@ module.exports = {
   // '0 1 * * 1': () => {
   //
   // }
+  '* * * * * *': async () => {
+    console.log("object")
+    // await strapi.plugins['email'].services.email.send({
+    //   to: 'tzsdqfkxebdsfwdnnl@niwghx.com',
+    //   from: 'joelrobuchon@strapi.io',
+    //   replyTo: 'annesophiepic@strapi.io',
+    //   subject: 'Use strapi email provider successfully',
+    //   text: 'Hello world!',
+    //   html: 'Hello world!',
+    // })
+    // console.log("object2")
+
+  }
 };

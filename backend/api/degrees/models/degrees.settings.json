@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "degrees",
+  "info": {
+    "name": "Degrees"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "degree": {
+      "type": "string"
+    }
+  }
+}

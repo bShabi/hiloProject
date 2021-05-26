@@ -1,4 +1,9 @@
 {
 	"latest": "3.6.2",
+<<<<<<< HEAD
 	"lastUpdateCheck": 1621581512492
+=======
+	"lastUpdateCheck": 1621966079864,
+	"lastNotification": 1621966079834
+>>>>>>> f32830a5d53c6ac707c29d679b459efa38827592
 }
