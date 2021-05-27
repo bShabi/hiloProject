@@ -1,0 +1,26 @@
+{
+    "sourceFile": "frontend/pages/account/signup.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1622134183416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1622134205636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     const resDegree = await fetch(`http://localhost:1337/degrees`)\n     const degrees = []\n     // // Get All univeristies {limit == 1000}\n \n-    const resUniveristy = fetch(`http://localhost:1337/uuniversities`)\n+    const resUniveristy = fetch(`http://localhost:1337/universities`)\n     const univeristy = resUniveristy.json()\n     console.log(univeristy);\n     // const univeristy = await resUniveristy.json()\n     return {\n"
+                },
+                {
+                    "date": 1622134227632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,15 +37,15 @@\n     const resDegree = await fetch(`http://localhost:1337/degrees`)\n     const degrees = []\n     // // Get All univeristies {limit == 1000}\n \n-    const resUniveristy = fetch(`http://localhost:1337/universities`)\n-    const univeristy = resUniveristy.json()\n-    console.log(univeristy);\n+    // const resUniveristy = fetch(`http://localhost:1337/usa-universities`)\n+    // const univeristy = resUniveristy.json()\n     // const univeristy = await resUniveristy.json()\n     return {\n         props: {\n-\n+            // students: students,\n+            // degrees: degrees\n             // univeristy: univeristy\n \n         }\n     }\n"
+                }
+            ],
+            "date": 1622134183416,
+            "name": "Commit-0",
+            "content": "\nimport { FaUser } from 'react-icons/fa'\nimport { ToastContainer, toast } from 'react-toastify'\nimport 'react-toastify/dist/ReactToastify.css'\nimport { useState, useEffect } from 'react'\nimport Link from 'next/link'\nimport Layout from '@/components/Layout'\n// import AuthContext from '@/context/AuthContext'\nimport styles from '@/styles/AuthForm.module.css'\nimport SliderLogin from '@/components/Login/SliderLogin'\nimport SliderCreateAccount from '@/components/SignUp/SliderCreateAccount'\nimport { API_URL } from '@/config/index'\n\n\nexport default function SignUpPage() {\n    // console.log(degrees);\n    return (\n        <Layout title='User Login'>\n            {/* {Login Sider} */}\n            <div className={styles.wrapper}>\n                <div className={styles.SliderLogin}>\n                    <SliderLogin />\n                </div>\n                <div className={styles.SliderCreateAccount}>\n                    <SliderCreateAccount />\n                </div>\n            </div>\n        </Layout>\n    )\n}\nexport async function getStaticProps() {\n\n\n    const resStudent = await fetch(`http://localhost:1337/students`)\n    const students = []\n\n    const resDegree = await fetch(`http://localhost:1337/degrees`)\n    const degrees = []\n    // // Get All univeristies {limit == 1000}\n\n    const resUniveristy = fetch(`http://localhost:1337/uuniversities`)\n    const univeristy = resUniveristy.json()\n    console.log(univeristy);\n    // const univeristy = await resUniveristy.json()\n    return {\n        props: {\n\n            // univeristy: univeristy\n\n        }\n    }\n}"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "universities",
+  "info": {
+    "name": "Universities"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NAME": {
+      "type": "string"
+    }
+  }
+}

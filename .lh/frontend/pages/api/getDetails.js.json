@@ -1,0 +1,42 @@
+{
+    "sourceFile": "frontend/pages/api/getDetails.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1622131577840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1622131629664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,8 @@\n \n export default async (req, res) => {\n     if (req.method === 'POST') {\n \n+\n+\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1622132487823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,8 @@\n export default async (req, res) => {\n     if (req.method === 'POST') {\n \n \n-\n+        const universities = await fetch(`${API_URL}/Universities?_limit=100`)\n+        console.log(universities.json());\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1622132761259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import axios from 'axios'\n \n \n export default async (req, res) => {\n-    if (req.method === 'POST') {\n+    if (req.method === 'GET') {\n \n \n         const universities = await fetch(`${API_URL}/Universities?_limit=100`)\n         console.log(universities.json());\n"
+                },
+                {
+                    "date": 1622132858833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n \n \n export default async (req, res) => {\n     if (req.method === 'GET') {\n+        console.log(\"in\");\n \n-\n         const universities = await fetch(`${API_URL}/Universities?_limit=100`)\n         console.log(universities.json());\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1622133129186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n \n \n export default async (req, res) => {\n     if (req.method === 'GET') {\n-        console.log(\"in\");\n+        console.log(\"innnnn\");\n \n-        const universities = await fetch(`${API_URL}/Universities?_limit=100`)\n-        console.log(universities.json());\n+        // const universities = await fetch(`${API_URL}/Universities?_limit=100`)\n+        // console.log(universities.json());\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1622133151560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import axios from 'axios'\n \n \n export default async (req, res) => {\n-    if (req.method === 'GET') {\n+    if (req.method === 'POST') {\n         console.log(\"innnnn\");\n \n         // const universities = await fetch(`${API_URL}/Universities?_limit=100`)\n         // console.log(universities.json());\n"
+                }
+            ],
+            "date": 1622131577840,
+            "name": "Commit-0",
+            "content": "import cookie from 'cookie'\nimport { API_URL } from '@/config/index'\nimport axios from 'axios'\n\n\nexport default async (req, res) => {\n    if (req.method === 'POST') {\n\n    }\n}"
+        }
+    ]
+}

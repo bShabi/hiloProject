@@ -1,0 +1,210 @@
+{
+    "sourceFile": "frontend/context/AuthContext.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 48,
+            "patches": [
+                {
+                    "date": 1622131463154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1622132504521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,10 @@\n     useEffect(() => checkUserLoggedIn(), [])\n \n \n     const getUniversities = async () => {\n+        const univeristie = fetch(`${NEXT_URL}/api/getDetails`)\n+        console.log(univeristie);\n \n     }\n     const register = async (user) => {\n         console.log(user);\n"
+                },
+                {
+                    "date": 1622132692444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     useEffect(() => checkUserLoggedIn(), [])\n \n \n     const getUniversities = async () => {\n-        const univeristie = fetch(`${NEXT_URL}/api/getDetails`)\n+        const univeristie = await fetch(`${NEXT_URL}/api/getDetails`)\n         console.log(univeristie);\n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622132700540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n \n     const getUniversities = async () => {\n         const univeristie = await fetch(`${NEXT_URL}/api/getDetails`)\n-        console.log(univeristie);\n+        console.log(\"auth\", univeristie);\n \n     }\n     const register = async (user) => {\n         console.log(user);\n"
+                },
+                {
+                    "date": 1622132797009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     useEffect(() => checkUserLoggedIn(), [])\n \n \n     const getUniversities = async () => {\n-        const univeristie = await fetch(`${NEXT_URL}/api/getDetails`)\n+        const univeristie = await axios(`${NEXT_URL}/api/getDetails`)\n         console.log(\"auth\", univeristie);\n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622132839810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n \n     const getUniversities = async () => {\n         const univeristie = await axios(`${NEXT_URL}/api/getDetails`)\n         console.log(\"auth\", univeristie);\n+        return \"bla\"\n \n     }\n     const register = async (user) => {\n         console.log(user);\n"
+                },
+                {
+                    "date": 1622133012348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { createContext, useEffect, useState } from 'react'\n import { useRouter } from 'next/router'\n import { NEXT_URL } from '@/config/index.js'\n-\n+import axios from 'axios'\n const AuthContext = createContext()\n \n \n export const AuthProvider = ({ children }) => {\n"
+                },
+                {
+                    "date": 1622133079792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     useEffect(() => checkUserLoggedIn(), [])\n \n \n     const getUniversities = async () => {\n+        console.log(\"in\");\n         const univeristie = await axios(`${NEXT_URL}/api/getDetails`)\n         console.log(\"auth\", univeristie);\n         return \"bla\"\n \n"
+                },
+                {
+                    "date": 1622133093395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const univeristie = await axios(`${NEXT_URL}/api/getDetails`)\n+        const univeristie = await fetch(`${NEXT_URL}/api/getDetails`)\n         console.log(\"auth\", univeristie);\n         return \"bla\"\n \n     }\n"
+                },
+                {
+                    "date": 1622133188475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const univeristie = await fetch(`${NEXT_URL}/api/getDetails`)\n+        const univeristie = await fetch(`${NEXT_URL}/api/getDetails`, {\n+            method: 'GET'\n+        })\n         console.log(\"auth\", univeristie);\n         return \"bla\"\n \n     }\n"
+                },
+                {
+                    "date": 1622133230058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,9 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const univeristie = await fetch(`${NEXT_URL}/api/getDetails`, {\n-            method: 'GET'\n-        })\n+        const univeristie = await fetch(`${API_URL}/Universities?_limit=100`)\n         console.log(\"auth\", univeristie);\n         return \"bla\"\n \n     }\n"
+                },
+                {
+                    "date": 1622133244399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createContext, useEffect, useState } from 'react'\n import { useRouter } from 'next/router'\n-import { NEXT_URL } from '@/config/index.js'\n+import { NEXT_URL, API_URL } from '@/config/index.js'\n import axios from 'axios'\n const AuthContext = createContext()\n \n \n"
+                },
+                {
+                    "date": 1622133270140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n     const getUniversities = async () => {\n         console.log(\"in\");\n         const univeristie = await fetch(`${API_URL}/Universities?_limit=100`)\n-        console.log(\"auth\", univeristie);\n+        console.log(\"auth\", univeristie.json());\n         return \"bla\"\n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622133895402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const univeristie = await fetch(`${API_URL}/Universities?_limit=100`)\n+        const univeristie = await fetch(`${API_URL}/Universities?_limit=100`, {\n+            method: 'GET'\n+        })\n         console.log(\"auth\", univeristie.json());\n         return \"bla\"\n \n     }\n"
+                },
+                {
+                    "date": 1622133947221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,10 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const univeristie = await fetch(`${API_URL}/Universities?_limit=100`, {\n-            method: 'GET'\n-        })\n+        const resUniveristy = fetch(`http://localhost:1337/usa-universities`)\n+        const univeristy = resUniveristy.json()\n         console.log(\"auth\", univeristie.json());\n         return \"bla\"\n \n     }\n"
+                },
+                {
+                    "date": 1622133954179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     const getUniversities = async () => {\n         console.log(\"in\");\n         const resUniveristy = fetch(`http://localhost:1337/usa-universities`)\n         const univeristy = resUniveristy.json()\n-        console.log(\"auth\", univeristie.json());\n+        console.log(\"auth\", univeristy);\n         return \"bla\"\n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622133979487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n     const getUniversities = async () => {\n         console.log(\"in\");\n         const resUniveristy = fetch(`http://localhost:1337/usa-universities`)\n-        const univeristy = resUniveristy.json()\n+        const univeristy = resUniveristy\n         console.log(\"auth\", univeristy);\n         return \"bla\"\n \n     }\n"
+                },
+                {
+                    "date": 1622133993803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const resUniveristy = fetch(`http://localhost:1337/usa-universities`)\n+        const resUniveristy = fetch(`http://localhost:1337/universities`)\n         const univeristy = resUniveristy\n         console.log(\"auth\", univeristy);\n         return \"bla\"\n \n"
+                },
+                {
+                    "date": 1622134007797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const resUniveristy = fetch(`http://localhost:1337/universities`)\n+        const resUniveristy = await fetch(`http://localhost:1337/universities`)\n         const univeristy = resUniveristy\n         console.log(\"auth\", univeristy);\n         return \"bla\"\n \n"
+                },
+                {
+                    "date": 1622134022194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n     const getUniversities = async () => {\n         console.log(\"in\");\n         const resUniveristy = await fetch(`http://localhost:1337/universities`)\n-        const univeristy = resUniveristy\n+        const univeristy = resUniveristy.body\n         console.log(\"auth\", univeristy);\n         return \"bla\"\n \n     }\n"
+                },
+                {
+                    "date": 1622134049923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n     const getUniversities = async () => {\n         console.log(\"in\");\n         const resUniveristy = await fetch(`http://localhost:1337/universities`)\n-        const univeristy = resUniveristy.body\n+        const univeristy = await resUniveristy.body\n         console.log(\"auth\", univeristy);\n         return \"bla\"\n \n     }\n"
+                },
+                {
+                    "date": 1622134098649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     const getUniversities = async () => {\n         console.log(\"in\");\n         const resUniveristy = await fetch(`http://localhost:1337/universities`)\n         const univeristy = await resUniveristy.body\n-        console.log(\"auth\", univeristy);\n+        console.log(\"auth\", resUniveristy);\n         return \"bla\"\n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622134118252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n     const getUniversities = async () => {\n         console.log(\"in\");\n         const resUniveristy = await fetch(`http://localhost:1337/universities`)\n-        const univeristy = await resUniveristy.body\n+        const univeristy = await resUniveristy.json()\n         console.log(\"auth\", resUniveristy);\n         return \"bla\"\n \n     }\n"
+                },
+                {
+                    "date": 1622134149127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     const getUniversities = async () => {\n         console.log(\"in\");\n         const resUniveristy = await fetch(`http://localhost:1337/universities`)\n         const univeristy = await resUniveristy.json()\n-        console.log(\"auth\", resUniveristy);\n+        console.log resUniveristy);\n         return \"bla\"\n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622134262292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     const getUniversities = async () => {\n         console.log(\"in\");\n         const resUniveristy = await fetch(`http://localhost:1337/universities`)\n         const univeristy = await resUniveristy.json()\n-        console.log resUniveristy);\n+        console.log(resUniveristy);\n         return \"bla\"\n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622139768049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const resUniveristy = await fetch(`http://localhost:1337/universities`)\n+        const resUniveristy = await axios.get(`http://localhost:1337/universities`)\n         const univeristy = await resUniveristy.json()\n         console.log(resUniveristy);\n         return \"bla\"\n \n"
+                },
+                {
+                    "date": 1622139803568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,13 +16,11 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const resUniveristy = await axios.get(`http://localhost:1337/universities`)\n-        const univeristy = await resUniveristy.json()\n-        console.log(resUniveristy);\n-        return \"bla\"\n+        const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => console.log(res))\n \n+\n     }\n     const register = async (user) => {\n         console.log(user);\n \n"
+                },
+                {
+                    "date": 1622139818451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => console.log(res))\n+        const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => console.log(res.data))\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622139883998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,12 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => console.log(res.data))\n+        let dataUni\n+        const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {\n+            dataUni = res.data\n+        })\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622139889198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n         let dataUni\n         const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {\n             dataUni = res.data\n         })\n+        return dataUni\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140025744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         let dataUni\n         const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {\n             dataUni = res.data\n         })\n-        return dataUni\n+        console.log(dataUni);\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140095789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,21 +8,24 @@\n export const AuthProvider = ({ children }) => {\n \n     const [user, setUser] = useState(null)\n     const [error, setError] = useState(null)\n+    const [univeristy, getUniveristy] = useState('')\n \n-\n     const router = useRouter()\n-    useEffect(() => checkUserLoggedIn(), [])\n+    useEffect(() => {\n+        checkUserLoggedIn()\n+        getUniversities\n+    }, [])\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n         let dataUni\n         const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {\n             dataUni = res.data\n         })\n-        console.log(dataUni);\n+        getUniveristy(dataUni)\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140105630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n             setUser(null)\n         }\n     }\n     return (\n-        <AuthContext.Provider value={{ user, error, register, login, logout, getUniversities }}>\n+        <AuthContext.Provider value={{ univeristy, user, error, register, login, logout, getUniversities }}>\n             {children}\n         </AuthContext.Provider>\n     )\n }\n"
+                },
+                {
+                    "date": 1622140160110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,11 @@\n     const [error, setError] = useState(null)\n     const [univeristy, getUniveristy] = useState('')\n \n     const router = useRouter()\n-    useEffect(() => {\n+    useEffect(async () => {\n         checkUserLoggedIn()\n-        getUniversities\n+        await getUniversities\n     }, [])\n \n \n     const getUniversities = async () => {\n"
+                },
+                {
+                    "date": 1622140238041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,19 +13,18 @@\n \n     const router = useRouter()\n     useEffect(async () => {\n         checkUserLoggedIn()\n-        await getUniversities\n+        await getUniversities()\n     }, [])\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n         let dataUni\n         const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {\n-            dataUni = res.data\n+            getUniveristy(res.data)\n         })\n-        getUniveristy(dataUni)\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140306575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,14 @@\n \n \n     const getUniversities = async () => {\n         console.log(\"in\");\n-        let dataUni\n+        let dataUni = []\n         const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {\n-            getUniveristy(res.data)\n+            res.data.find((value, index) => {\n+                console.log(value);\n+            })\n+\n         })\n \n \n     }\n"
+                },
+                {
+                    "date": 1622140315027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         console.log(\"in\");\n         let dataUni = []\n         const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {\n             res.data.find((value, index) => {\n-                console.log(value);\n+                console.log(value.NAME);\n             })\n \n         })\n \n"
+                },
+                {
+                    "date": 1622140359284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         console.log(\"in\");\n         let dataUni = []\n         const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {\n             res.data.find((value, index) => {\n-                console.log(value.NAME);\n+                dataUni.push({ label: value.NAME, value: value.NAME });\n             })\n \n         })\n \n"
+                },
+                {
+                    "date": 1622140374859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n                 dataUni.push({ label: value.NAME, value: value.NAME });\n             })\n \n         })\n+        console.log(v)\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140380265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                 dataUni.push({ label: value.NAME, value: value.NAME });\n             })\n \n         })\n-        console.log(v)\n+        console.log(dataUni)\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140418837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         console.log(\"in\");\n         let dataUni = []\n         const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {\n             res.data.find((value, index) => {\n-                dataUni.push({ label: value.NAME, value: value.NAME });\n+                dataUni.push({ value: value.NAME, label: value.NAME });\n             })\n \n         })\n         console.log(dataUni)\n"
+                },
+                {
+                    "date": 1622140468736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n export const AuthProvider = ({ children }) => {\n \n     const [user, setUser] = useState(null)\n     const [error, setError] = useState(null)\n-    const [univeristy, getUniveristy] = useState('')\n+    const [univeristy, setUniveristy] = useState('')\n \n     const router = useRouter()\n     useEffect(async () => {\n         checkUserLoggedIn()\n@@ -26,8 +26,9 @@\n                 dataUni.push({ value: value.NAME, label: value.NAME });\n             })\n \n         })\n+        setUniveristy(dataUni)\n         console.log(dataUni)\n \n \n     }\n"
+                },
+                {
+                    "date": 1622140476726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,9 @@\n                 dataUni.push({ value: value.NAME, label: value.NAME });\n             })\n \n         })\n-        setUniveristy(dataUni)\n-        console.log(dataUni)\n+        await setUniveristy(dataUni)\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140602858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                 dataUni.push({ value: value.NAME, label: value.NAME });\n             })\n \n         })\n-        await setUniveristy(dataUni)\n+        setUniveristy(dataUni)\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140616246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n             })\n \n         })\n         setUniveristy(dataUni)\n+        console.log(university);\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140645512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n     const router = useRouter()\n     useEffect(async () => {\n         checkUserLoggedIn()\n-        await getUniversities()\n+        await setUniveristy()\n     }, [])\n \n \n     const getUniversities = async () => {\n@@ -27,9 +27,9 @@\n             })\n \n         })\n         setUniveristy(dataUni)\n-        console.log(university);\n+        console.log(univeristy);\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140659034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n     const router = useRouter()\n     useEffect(async () => {\n         checkUserLoggedIn()\n-        await setUniveristy()\n+        await getUniversities()\n     }, [])\n \n \n     const getUniversities = async () => {\n"
+                },
+                {
+                    "date": 1622140679867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             })\n \n         })\n         setUniveristy(dataUni)\n-        console.log(univeristy);\n+        console.log(\"univeristy\", univeristy);\n \n \n     }\n     const register = async (user) => {\n"
+                },
+                {
+                    "date": 1622140692867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                 dataUni.push({ value: value.NAME, label: value.NAME });\n             })\n \n         })\n-        setUniveristy(dataUni)\n+        await setUniveristy(dataUni)\n         console.log(\"univeristy\", univeristy);\n \n \n     }\n"
+                }
+            ],
+            "date": 1622131463154,
+            "name": "Commit-0",
+            "content": "import { createContext, useEffect, useState } from 'react'\nimport { useRouter } from 'next/router'\nimport { NEXT_URL } from '@/config/index.js'\n\nconst AuthContext = createContext()\n\n\nexport const AuthProvider = ({ children }) => {\n\n    const [user, setUser] = useState(null)\n    const [error, setError] = useState(null)\n\n\n    const router = useRouter()\n    useEffect(() => checkUserLoggedIn(), [])\n\n\n    const getUniversities = async () => {\n\n    }\n    const register = async (user) => {\n        console.log(user);\n\n        const res = await fetch(`${NEXT_URL}/api/register`, {\n            method: 'POST',\n            headers: {\n                'Content-Type': 'application/json',\n                'Accept': 'application/json'\n            },\n            body: JSON.stringify(user),\n        })\n\n        const data = await res.json()\n        console.log(\"data\", res.data)\n        console.log(\"data\", data)\n        if (res.ok) {\n            setUser(data.user)\n            router.push('/')\n        } else {\n            setError(data.message)\n            setError(null)\n        }\n    }\n\n    //  Login User \n    const login = async ({ userName: identifier, password }) => {\n        const res = await fetch(`${NEXT_URL}/api/login`, {\n            method: 'POST',\n            headers: {\n                'Content-Type': 'application/json',\n            },\n            body: JSON.stringify({\n                identifier,\n                password,\n            }),\n        })\n\n        const data = await res.json()\n\n        if (res.ok) {\n            console.log(\"ok\");\n            setUser(data.user)\n            router.push('/')\n        } else {\n            setError(data.message)\n            setError(null)\n        }\n    }\n\n\n\n    // Logout user\n    const logout = async () => {\n        const res = await fetch(`${NEXT_URL}/api/logout`, {\n            method: 'POST',\n        })\n\n        if (res.ok) {\n            setUser(null)\n            router.push('/')\n        }\n    }\n\n    // Check if user is logged in\n    const checkUserLoggedIn = async (user) => {\n        const res = await fetch(`${NEXT_URL}/api/user`)\n        const data = await res.json()\n        if (res.ok) {\n            setUser(data.user)\n        } else {\n            setUser(null)\n        }\n    }\n    return (\n        <AuthContext.Provider value={{ user, error, register, login, logout, getUniversities }}>\n            {children}\n        </AuthContext.Provider>\n    )\n}\n\nexport default AuthContext"
+        }
+    ]
+}

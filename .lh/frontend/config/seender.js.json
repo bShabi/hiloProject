@@ -1,0 +1,22 @@
+{
+    "sourceFile": "frontend/config/seender.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1622131723047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1622132294599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n \n     for (let index = 0; index < data.length; index++) {\n         const postUser = data[index]\n-        const strapiRes = await fetch(`http://localhost:1337/usa-universities`, {\n+        const strapiRes = await fetch(`http://localhost:1337/Universities`, {\n             method: 'POST',\n             headers: {\n                 'Content-Type': 'application/json',\n             },\n"
+                }
+            ],
+            "date": 1622131723047,
+            "name": "Commit-0",
+            "content": "const CSVTOJSON = require('csvtojson')\nconst axios = require('axios')\nconst fetch = require('node-fetch')\n\nconst importData = async () => {\n    const data = await CSVTOJSON().fromFile('Colleges.csv')\n\n\n    for (let index = 0; index < data.length; index++) {\n        const postUser = data[index]\n        const strapiRes = await fetch(`http://localhost:1337/usa-universities`, {\n            method: 'POST',\n            headers: {\n                'Content-Type': 'application/json',\n            },\n            body: JSON.stringify({\n                NAME: postUser.NAME,\n                ADDRESS: postUser.ADDRESS,\n                CITY: postUser.CITY,\n                STATE: postUser.NAME,\n                'Type_of_school': postUser.NAME,\n                ZIP: postUser.ZIP,\n                TELEPHONE: postUser.TELEPHONE,\n                COUNTY: postUser.COUNTY,\n                COUNTYFIPS: postUser.COUNTYFIPS,\n                COUNTRY: postUser.COUNTRY,\n                WEBSITE: postUser.WEBSITE,\n                ALIAS: postUser.ALIAS,\n                TOTAL_ENROLLMENT: postUser.TOTAL_ENROLLMENT\n            }),\n\n        }).then((result) => {\n            console.log(\"Success\");\n        })\n\n\n    }\n}\nconst importDegrees = async () => {\n    const data = await CSVTOJSON().fromFile('degrees.csv')\n\n    // for (let index = 0; index < 2; index++) {\n    //     const postUser = data[index].Degrees\n    //     console.log(postUser);\n    const postUser = data[1].Degrees\n\n    // const strapiRes = await fetch(`http://localhost:1337/DEGREES`, {\n    //     method: 'POST',\n    //     headers: {\n    //         'Content-Type': 'application/json',\n    //     },\n    //     body: JSON.stringify({\n    //         degree: postUser.Degrees,\n\n    //     }),\n    // })\n    // const res = await strapiRes.json()\n    // console.log(res);\n\n    //     }).then((result) => {\n    //         console.log(result);\n    //     })\n    //}\n\n    axios\n        .post('http://localhost:1337/DEGREES', {\n            degree: postUser.Degrees,\n\n        })\n        .then(response => {\n            console.log(response);\n        });\n\n}\nimportData()\n// importDegrees()\n// data: {\n"
+        }
+    ]
+}
