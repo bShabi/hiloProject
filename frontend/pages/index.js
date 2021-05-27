@@ -3,12 +3,16 @@ import Slider from '@/components/Slider'
 import Layout from '@/components/Layout'
 import HeadConent from '@/components/HeadContent'
 import Footer from '@/components/Footer'
+import WelcomPage from '@/components/WelcomPage'
 
 export default function HomePage() {
   return (
+    
     <>
       {/* Head content + Categories Carusel*/}
+      
       <Layout>
+        
         <HeadConent
           title="HiLo is your partner for life."
           content="Find the practical answers you are looking for, in a manner that

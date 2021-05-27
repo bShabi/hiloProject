@@ -15,39 +15,60 @@ import { API_URL } from '@/config/index'
 export default function SignUpPage() {
     // console.log(degrees);
     return (
-        <Layout title='User Login'>
+        
+        <Layout >
             {/* {Login Sider} */}
-            <div className={styles.wrapper}>
-                <h2>logindsd</h2>
-                <div className={styles.SliderLogin}>
-                    <SliderLogin />
+   
+    <div className={styles.box}>
+       
+    <div className={styles.column}>
+                <SliderLogin />       
                 </div>
-                <div className={styles.SliderCreateAccount}>
-                    <SliderCreateAccount />
-                </div>
-            </div>
+    <div className={styles.createAccount}>
+    <h1>Create Aacount</h1>
+
+                <SliderCreateAccount/>
+                            
+       </div>
+
+    
+
+        <div className={styles.row}>
+      
+
+                
+                        
+        </div>
+           
+    </div>
+
+               
+  
+        
+            
         </Layout>
+        
     )
 }
-export async function getStaticProps() {
+// export async function getStaticProps() {
 
 
-    const resStudent = await fetch(`http://localhost:1337/students`)
-    const students = []
+//     const resStudent = await fetch(`http://localhost:1337/students`)
+//     const students = []
 
-    const resDegree = await fetch(`http://localhost:1337/degrees`)
-    const degrees = []
-    // // Get All univeristies {limit == 1000}
+//     const resDegree = await fetch(`http://localhost:1337/degrees`)
+//     const degrees = []
+//     // // Get All univeristies {limit == 1000}
 
-    // const resUniveristy = fetch(`http://localhost:1337/usa-universities`)
-    // const univeristy = resUniveristy.json()
-    // const univeristy = await resUniveristy.json()
-    return {
-        props: {
-            students: students,
-            degrees: degrees
-            // univeristy: univeristy
+//     // const resUniveristy = fetch(`http://localhost:1337/usa-universities`)
+//     // const univeristy = resUniveristy.json()
+//     // const univeristy = await resUniveristy.json()
+//     return {
+//         props: {
+//             students: students,
+//             degrees: degrees
+//             // univeristy: univeristy
 
-        }
-    }
-}
+//         }
+//     }
+// }

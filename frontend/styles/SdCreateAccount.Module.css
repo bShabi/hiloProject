@@ -1,14 +1,30 @@
-.container {
-  padding: 10px;
-}
 
 .blugbg {
-  background: #458cfe;
+  background: #6d0404;
   width: 599px;
   height: 566px;
   border-radius: 36px;
   padding: 30px;
+
 }
+
+
+
+.btnContext button{
+  font-size: 70px;
+  color: #6d0404;
+}
+
+.blugbg h2 {
+  background: #6d0404;
+  width: 599px;
+  height: 566px;
+  border-radius: 36px;
+  padding: 30px;
+  font-size: 70px;
+
+}
+
 .title h2 {
   letter-spacing: 0.2px;
   margin: 0 auto;
@@ -16,7 +32,7 @@
   width: 353px;
   height: 56px;
   font-weight: 800;
-  color: #ffffff;
+  color: #6d0404;
 }
 
 .blugbg h3 {

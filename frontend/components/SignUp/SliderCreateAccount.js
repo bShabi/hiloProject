@@ -25,21 +25,21 @@ export default function SliderCreateAccount(students, degrees) {
 
     const welcome = () => {
         return (
-            <div className={styles.blugbg}>
+            <div className={styles.g}>
 
                 <div className={styles.title}>
                     <h2>Create account</h2>
                 </div>
+                
                 {/* <div className={styles.subtitle}> */}
                 <h3>Are you a student or a mentor?</h3>
                 <p>*Students will get benefits and discounts on the platform</p>
                 {/* </div> */}
-                <div>
+                <div className={styles.btnContext}>
                     <button className={styles.btnSignIn} onClick={studnetHandlerBtn}>Student</button>
                     <button className={styles.btnSignIn} onClick={mentorHandlerBtn}>Mentor</button>
                     {/* {screen === 'Student' && (CreateStudent(students.student))}
                     {screen === 'Mentor' && (CreateMentor(students.student))} */}
-
                 </div>
                 <div>
                     <button onClick={regualerUserBtn}>Skip</button>

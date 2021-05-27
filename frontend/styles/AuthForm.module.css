@@ -1,6 +1,6 @@
 .auth {
   background-color: #FFFFFF;
-  width:599px;
+  width:70%;
   height: 656px;
   padding: 50px 40px;
   border: 1px solid;
@@ -9,6 +9,58 @@
   border-radius: 10%;
  
 }
+.container{
+  background-color: #FFFFFF;
+  width:70%;
+  height: 656px;
+  padding: 50px 40px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 4px 4px #C6C1C1;
+  border-radius: 10%;
+}
+
+
+.box{
+  padding: 4%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.row{
+ margin: 0;
+  margin: 3%;
+ 
+}
+
+.column {
+  float: left;
+  text-align: center;
+  padding-left: 5%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+
+
+.createAccount{
+  background-color: #FFFFFF;
+  text-align: center;
+  float: left;
+  border: 1px solid;
+  width: 500px;
+  box-shadow: 4px 4px #C6C1C1;
+  border-radius: 10%;
+  height: 656px;
+}
+
+
+
+
 
  .auth h1 {
     font-size: 45px ;
@@ -28,6 +80,12 @@
  
 }
 
+.inputText::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(168, 167, 167);
+  opacity: 5; /* Firefox */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 4px;
+} 
 
 .inputText i {
   float: left;
@@ -46,6 +104,12 @@
   margin: 5%;
 }
 
+.btn:hover{
+  color: black;
+  background: #fff;
+ 
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -56,10 +120,13 @@
 
 .p {
   font-size: 16px;
-	
 	color: #000358;
  font-weight: bold;
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.p a {
+  text-decoration: none;
 }
 
 

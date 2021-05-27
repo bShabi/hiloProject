@@ -8,6 +8,7 @@ import Layout from '@/components/Layout'
 import AuthContext from '@/context/AuthContext'
 import styles from '@/styles/AuthForm.module.css'
 
+
 export default function LoginPage() {
 
 
@@ -42,6 +43,8 @@ export default function LoginPage() {
                         className={styles.inputText}
                         
                    />
+                  
+        
                 </div>
                 
                     <i class="fa fa-lock"></i>
@@ -53,6 +56,7 @@ export default function LoginPage() {
                         onChange={(e) => setPassword(e.target.value)}
                         className={styles.inputText}
                     />
+                    
                 <div className={styles.subText}>
                 <h3>Or login with</h3><br></br>
                     <div className={styles.socialLinks}>
@@ -69,7 +73,7 @@ export default function LoginPage() {
             <div className={styles.p}>
 
             <p>
-                Don't have an account? <Link href='/account/signup'>Sign Up</Link>
+                Don't have an account? <Link href='/account/signup'><a>Sign Up</a></Link>
             </p>
 
             <p>
