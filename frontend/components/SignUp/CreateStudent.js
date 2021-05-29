@@ -21,16 +21,16 @@ export default function CreateStudentSlid() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [username, setUsername] = useState('')
-    const [university, setUniversity] = useState(' ')
+    // const [university, setUniversity] = useState(' ')
     const [graduation, setGraduation] = useState('')
     const [degree, setDegree] = useState('')
 
     const [stepRegister, setStepRegister] = useState(3)
 
-    const { register, error, univeristy } = useContext(AuthContext)
+    const { register, error, univeristy, getSugesetUniversity } = useContext(AuthContext)
     useEffect(async () => {
-        console.log(university);
-    }, [university])
+        console.log(univeristy);
+    }, [univeristy])
     // useEffect(() => error && toast.error(error))
 
     const handleSubmit = (e) => {
@@ -91,7 +91,10 @@ export default function CreateStudentSlid() {
     }
 
     // Suggestions for univeristies from All Students
-
+    const getSugeset = (e) => {
+        if (e.length % 3 === 0)
+            getSugesetUniversity(e)
+    }
     const stepOne = () => {
         return (
             <div>
@@ -151,15 +154,18 @@ export default function CreateStudentSlid() {
 
                 <div>
                     <h3>Lets get to know you!</h3>
-                    <Select options={university} />
+                    <Select
+                        options={univeristy}
+                        onInputChange={(e) => getSugeset(e)}
+                    />
 
-                    <input
+                    {/* <input
                         placeholder='Your university'
                         type='text'
                         id='university'
                         value={university}
                         onChange={(e) => getuniversitys(e.target.value)}
-                    />
+                    /> */}
                     <input
                         placeholder='Your graduation date'
                         type='date'

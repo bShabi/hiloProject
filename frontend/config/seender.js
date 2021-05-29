@@ -72,6 +72,6 @@ const importDegrees = async () => {
         });
 
 }
-importData()
-// importDegrees()
+// importData()
+importDegrees()
 // data: {

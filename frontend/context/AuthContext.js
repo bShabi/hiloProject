@@ -8,8 +8,10 @@ const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
+    let univeristy = []
+
     const [error, setError] = useState(null)
-    const [univeristy, setUniveristy] = useState('')
+    // const [univeristy, setUniveristy] = useState()
 
     const router = useRouter()
     useEffect(async () => {
@@ -17,18 +19,40 @@ export const AuthProvider = ({ children }) => {
         await getUniversities()
     }, [])
 
-
+    const getSugesetUniversity = async (value) => {
+        console.log(value);
+        await axios.get(`http://localhost:1337/universities?NAME_contains=${value}`).then((res) => {
+            console.log(res);
+        })
+    }
+    getDegree = async () => {
+        await axios.get(`{API_URL}/degrees`)
+    }
     const getUniversities = async () => {
         console.log("in");
-        let dataUni = []
+        let dataForm = []
         const resUniveristy = await axios.get(`http://localhost:1337/universities`).then((res) => {
-            res.data.find((value, index) => {
-                dataUni.push({ value: value.NAME, label: value.NAME });
-            })
+            dataForm = res.data
+            dataForm.forEach(element => {
+                univeristy.push({ value: element.NAME, label: element.NAME })
+
+            });
+            console.log(univeristy);
 
         })
-        await setUniveristy(dataUni)
-        console.log("univeristy", univeristy);
+
+        //     res.data.find((value, index) => {
+        //         dataUni.push({ value: value.NAME, label: value.NAME });
+        //         setUniveristy(prevState => {
+        //             return {
+        //                 ...prevState,
+        //                 value: dataUni.NAME, label: dataUni.NAME
+        //             }
+        //         })
+        //     })
+
+        // })
+        // console.log("univeristy", univeristy);
 
 
     }
@@ -106,7 +130,7 @@ export const AuthProvider = ({ children }) => {
         }
     }
     return (
-        <AuthContext.Provider value={{ univeristy, user, error, register, login, logout, getUniversities }}>
+        <AuthContext.Provider value={{ getSugesetUniversity, univeristy, user, error, register, login, logout, getUniversities }}>
             {children}
         </AuthContext.Provider>
     )
