@@ -18,29 +18,40 @@ export default function SignUpPage() {
         
         <Layout >
             {/* {Login Sider} */}
-   
-    <div className={styles.box}>
-       
-    <div className={styles.column}>
-                <SliderLogin />       
+            <div className={styles.box}>
+                <div className={styles.row}>
+  
+                    <SliderLogin />    
+                   
+                     <SliderCreateAccount/>
+                    
                 </div>
-    <div className={styles.createAccount}>
-    <h1>Create Aacount</h1>
 
-                <SliderCreateAccount/>
-                            
-       </div>
 
-    
+            </div>
+           
+           
+
+
+           
+   
+    {/* <div className={styles.box}>
 
         <div className={styles.row}>
-      
+            
+                <div className={styles.column}>
+                            <SliderLogin />       
+                </div>
+                <div className={styles.createAccount}>
+                <h1>Create Aacount</h1>
 
-                
-                        
+                    <SliderCreateAccount/>
+                                        
+                </div>
+               
         </div>
            
-    </div>
+    </div> */}
 
                
   

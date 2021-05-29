@@ -4,7 +4,18 @@
 }
 
 
-.context h1{
+
+.column{
+    float: left;
+    width: 50%;
+    padding: 15px;
+    text-align: center;
+    padding-top: 5%;
+}
+
+
+
+.column h1{
     color: #000358;
     font-size: 50px;
     font-weight: bolder;
@@ -13,7 +24,7 @@
 }
 
 
-.context p{
+.column p{
     color: #000358;
     font-size: 25px;
     font-weight: bold;
