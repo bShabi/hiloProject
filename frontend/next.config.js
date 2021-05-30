@@ -4,5 +4,19 @@ module.exports = {
     },
     images: {
         domains: ['res.cloudinary.com']
+    },
+
+    buildModules: [
+        '@nuxtjs/google-fonts',
+    ],
+
+    googleFonts: {
+        families: {
+            Inter: [300, 500, 700],
+        }
     }
+  
 }
+
+
+

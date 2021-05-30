@@ -6,7 +6,7 @@ import { useState, useEffect, useRef, useContext } from 'react'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
 import AuthContext from '@/context/AuthContext'
-import styles from '@/styles/AuthForm.module.css'
+import styles from '@/styles/SdCreateAccount.module.css'
 
 export default function CreateStudentSlid() {
 
@@ -89,26 +89,57 @@ export default function CreateStudentSlid() {
 
     const stepOne = () => {
         return (
-            <div>
-                <div>
-                    <h1>Step 1</h1>
+            <div className={styles.auth}>
+               
+                    <div className={styles.column}>
+
+                    <h2>Create Account</h2>
                     <input
-                        placeholder='Full Name'
+                        placeholder=' Full Name'
                         type='text'
                         id='fullname'
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
+                        className={styles.inputText}
                     />
-                </div>
-                <div>
+                                
+                  
                     <input
-                        placeholder='Academic Email Address'
+                        placeholder=' Academic Email Address'
                         type='email'
                         id='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        className={styles.inputText}
                     />
-                </div>
+
+                    <input
+                        placeholder=' Repeat Email Address'
+                        type='email'
+                        id='email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className={styles.inputText}
+                    />
+
+            <div className={styles.subText}>
+                <h3>Or login with</h3><br></br>
+                    <div className={styles.socialLinks}>
+                    <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-google fa-2x"></i></a>
+  	 				<a href="#"><i class="fab fa-apple fa-2x"></i></a>
+                       
+                      
+                    </div>
+                <input type='submit' value='Next' className={styles.btnNext} />
+                    <p className={styles.p2}>
+                      Already have an account? <Link href='/account/login'><a>Sign in </a></Link>
+                      </p>
+       
+            </div>    
+                  
+                 </div>
+
             </div>
         )
 
@@ -177,27 +208,23 @@ export default function CreateStudentSlid() {
 
     return (
         <div className={styles.auth}>
-            <h1>
-                <FaUser /> Create account</h1>
             <ToastContainer />
             <form onSubmit={handleSubmit}>
                 {/* // Steps  */}
                 {stepRegister === 1 && (stepOne())}
                 {stepRegister === 2 && (stepTwo())}
                 {stepRegister === 3 && (stepThree())}
-                {stepRegister != 3 ?
-                    <input type='submit' value='Next' className='btn' /> :
-                    <input type='submit' value='Im done' className='btn' />
-                }
+                {/* {stepRegister != 3 ?
+                    <input type='submit' value='' className='btn' /> :
+                    <input type='submit' value='' className='btn' />
+                } */}
             </form>
             {error &&
                 <div>
                     {error}
                 </div>}
 
-            <p>
-                Already have an account? <Link href='/account/login'>Signin</Link>
-            </p>
+           
         </div>
     )
 }

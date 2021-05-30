@@ -1,0 +1,101 @@
+.box{
+    background: #E7F0FF;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 5px;
+    height: 100%;
+    
+  }
+
+  .column{
+    float: left;
+    height: 600px;
+    padding: 15px;
+    text-align: center;
+    padding-top: 2%;
+    border: 1px solid #BFBFBF;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    border-radius: 5%;
+    background: #fff;
+    width:28%;
+  }
+
+  .column h1{
+  
+    color: #000358;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Work Sans';
+    
+  }
+ 
+  .inputText{
+    background: whitesmoke;
+    border-radius: 5%;
+    width: 75%;
+    padding-top: 1px;
+    margin: 5%;
+    border-style: none;
+    box-shadow: 0px 5px 5px gray;
+   
+  }
+  
+  
+  .inputText::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(168, 167, 167);
+    opacity: 5; /* Firefox */
+    font-family: 'Work Sans', sans-serif;
+    padding: 4px;
+  } 
+  
+  .inputText i {
+    float: left;
+  }
+
+  .upload::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+  .upload{
+  content: 'Choose your best picture!   ';
+  display: inline-block;
+  background: #002060;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  }
+
+  
+  .upload:hover::before {
+    border-color: black;
+  }
+  .upload:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+
+  .btnNext{
+    color: #fff;
+    background: #BDBDBD;
+    border: none;
+    padding: 5px 15px;
+    font-family: 'Work Sans';
+    font-size: 20px;
+    text-align: center;
+    width: 30%;
+    margin: 5%;
+  }
+  
+  .btnNext:hover{
+    color: #BDBDBD;
+    background: #fff;
+    font-weight: bold;
+    border-color: black;
+    border: 1px solid;
+  }

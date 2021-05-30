@@ -27,13 +27,11 @@ export default function SliderCreateAccount(students, degrees) {
         return (
             
                     <div className={styles.column}>
-                   
-                     <h2>Create account</h2>
-                     
-                    
+                   <h2>Create Account</h2>
+                        
                          <div className={styles.subtitle}> 
-                        <h3>Are you a student </h3>
-                        <h3>or a mentor?</h3>
+                        <h1>Are you a student or a mentor?</h1>
+                        {/* <h1>or a mentor?</h1> */}
                         <p>*Students will get benefits and discounts on the platform</p>
                          </div> 
                          <div className={styles.btnContext}> 
@@ -44,10 +42,12 @@ export default function SliderCreateAccount(students, degrees) {
                             {screen === 'Mentor' && (CreateMentor(students.student))} */}
                          </div> 
                          <div className={styles.btnContext}> 
-                            <button className={styles.btnSkip} onClick={regualerUserBtn}>Skip</button>
+                            <button className={styles.btnSkip} onClick={regualerUserBtn}>Skip&nbsp; <i class='fas fa-angle-right'></i> </button> 
+                            <p className={styles.p}>Already have an account? <a className={styles.a}>Sign in</a></p>
                         </div>
-                        <p className={styles.p}>Already have an account? <a className={styles.a}>Sign in</a></p>
                         
+                       
+
                     </div>
          
               

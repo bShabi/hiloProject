@@ -20,11 +20,13 @@ export default function SignUpPage() {
             {/* {Login Sider} */}
             <div className={styles.box}>
                 <div className={styles.row}>
-  
+
+                   
                     <SliderLogin />    
                    
                      <SliderCreateAccount/>
                     
+
                 </div>
 
 

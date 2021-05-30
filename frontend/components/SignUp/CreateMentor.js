@@ -6,7 +6,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import Link from 'next/link'
 // import Modal from '@/components/Modal'
 import AuthContext from '@/context/AuthContext'
-import styles from '@/styles/AuthForm.module.css'
+// import styles from '@/styles/AuthForm.module.css'
+import styles from '@/styles/MantorSteps.module.css'
 import ImageUpload from '@/components/ImageUpload'
 
 export default function CreateMentorSlide() {
@@ -105,11 +106,11 @@ export default function CreateMentorSlide() {
 
     const stepOne = () => {
         return (
-            <div>
-                <div>
+            <div className={styles.auth}>
+                <div className={styles.column}>
                     <h1>Step 1</h1>
                     <input
-                        placeholder='Full Name'
+                        placeholder='Full Namesss'
                         type='text'
                         id='fullname'
                         value={fullName}
@@ -157,31 +158,36 @@ export default function CreateMentorSlide() {
     }
     const stepThree = () => {
         return (
-            <div>
-                <h1>Step 3</h1>
+            <div className={styles.box}>
+               
 
-                <div>
-                    <h3>Lets get to know you!</h3>
+                <div className={styles.column}>
+                <h1>Let’s build your profile!</h1>
+                   
                     <input
-                        placeholder='Field of experise'
+                        placeholder=' Field of experise'
                         type='text'
                         id='experise'
                         value={experise}
                         onChange={(e) => setExperise(e.target.value)}
+                        className={styles.inputText}
                     />
-                    <input
-                        placeholder='Your Services'
+                    {/* <input
+                        placeholder=' Your Services'
                         type='text'
                         id='Services'
                         value={service}
                         onChange={(e) => setService(e.target.value)}
-                    />
+                        className={styles.inputText}
+                    /> */}
                     <input
-                        placeholder='Short About of yourself(300 Charters)'
-                        type='text'
+                        placeholder=' Short About of yourself(300 Charters)'
+                        type='textarea  '
                         id='aboutMentor'
                         value={aboutMentor}
                         onChange={(e) => setAboutMentor(e.target.value)}
+                     
+                        className={styles.inputText}
                     />
                     <input
                         placeholder='Upload Best Pic'
@@ -189,10 +195,13 @@ export default function CreateMentorSlide() {
                         id='image'
                         value={mentorIMG}
                         onChange={(e) => setMentorIMG(e.target.value)}
+                        className={styles.upload}
                     />
 
-
+                
+             <input type='submit' value='Next' className={styles.btnNext} />
                 </div>
+                
             </div >
         )
 
@@ -201,23 +210,20 @@ export default function CreateMentorSlide() {
 
     return (
         <div className={styles.auth}>
-            <h1>
-                <FaUser /> Create account</h1>
+            
             <ToastContainer />
             <form onSubmit={handleSubmit}>
                 {/* // Steps  */}
                 {stepRegister === 1 && (stepOne())}
                 {stepRegister === 2 && (stepTwo())}
                 {stepRegister === 3 && (stepThree())}
-                {stepRegister != 3 ?
+                {/* {stepRegister != 3 ?
                     <input type='submit' value='Next' className='btn' /> :
                     <input type='submit' value='Im done' className='btn' />
-                }
+                } */}
             </form>
 
-            <p>
-                Already have an account? <Link href='/account/login'>Signin</Link>
-            </p>
+           
         </div>
     )
 }

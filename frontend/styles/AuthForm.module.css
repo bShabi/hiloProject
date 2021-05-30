@@ -33,6 +33,14 @@
   
 }
 
+.column{
+  float: left;
+  width: 50%;
+  padding: 15px;
+  text-align: center;
+  padding-top: 5%;
+}
+
 
  .auth h1 {
     font-size: 45px ;
@@ -142,4 +150,31 @@
   text-align: center;
   margin: auto;
   width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+
+  .box{
+    width: 50%;
+  }
+
+  .auth{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+
+  .box{
+    width: 50%;
+  }
+  .auth{
+    width: 50%;
+  }
 }
