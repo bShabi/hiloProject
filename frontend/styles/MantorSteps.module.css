@@ -17,17 +17,10 @@
     box-shadow: 10px 10px 5px #aaaaaa;
     border-radius: 5%;
     background: #fff;
-    width:28%;
+    width:30%;
   }
 
-  .column h1{
-  
-    color: #000358;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'Work Sans';
-    
-  }
+
  
   .inputText{
     background: whitesmoke;
@@ -98,4 +91,91 @@
     font-weight: bold;
     border-color: black;
     border: 1px solid;
+  }
+
+  .socialLinks a{
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	background-color: #458CFE;;
+	margin:0 20px 10px 0;
+	text-align: center;
+	line-height: 60px;
+	color: #ffffff;
+	transition: all 0.5s ease;
+	
+}
+.socialLinks a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+.subText{
+    font-size: 16px;
+      color: #000358;
+      display: block;
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  .subText h3{
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  .subText .p2 a {
+    text-decoration: none;
+  }
+
+  .column h2{
+  
+    color: #000358;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Work Sans';
+    
+  }
+  
+  .column h1{
+    
+    color: #000358;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Work Sans';
+    
+  }
+  
+  .column h3{
+    
+    color: #000358;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    font-style: normal;
+    margin:5%;
+  }
+
+  .p{
+    padding-top: 10%;
+    color: #000358;
+    font-family: 'Work Sans';
+   font-weight: bold;
+   font-size: 20px;
+  }
+  .a{
+    text-decoration: none;
+    color: #458CFE;
+    background: none;
+  width: 200px;
+  font-weight: bold;
+  }
+  
+  .p2 {
+    font-size: 20px;
+      color: #000358;
+   font-weight: bold;
+   font-family: 'Work Sans', sans-serif;
+  }
+  
+  .p a {
+    text-decoration: none;
   }

@@ -89,7 +89,7 @@ export default function CreateStudentSlid() {
 
     const stepOne = () => {
         return (
-            <div className={styles.auth}>
+            <div className={styles.box}>
                
                     <div className={styles.column}>
 
@@ -100,7 +100,7 @@ export default function CreateStudentSlid() {
                         id='fullname'
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className={styles.inputText}
+                        className={styles.inputTextStepOne}
                     />
                                 
                   
@@ -110,7 +110,7 @@ export default function CreateStudentSlid() {
                         id='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className={styles.inputText}
+                        className={styles.inputTextStepOne}
                     />
 
                     <input
@@ -119,11 +119,11 @@ export default function CreateStudentSlid() {
                         id='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className={styles.inputText}
+                        className={styles.inputTextStepOne}
                     />
 
             <div className={styles.subText}>
-                <h3>Or login with</h3><br></br>
+                <h3>Or login with</h3>
                     <div className={styles.socialLinks}>
                     <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
                     <a href="#"><i class="fab fa-google fa-2x"></i></a>
@@ -146,59 +146,75 @@ export default function CreateStudentSlid() {
     }
     const stepTwo = () => {
         return (
-            <div>
-                <h1>Step 2</h1>
+            <div className={styles.box}>
+               
 
-                <div>
-                    <h3>You will need a user name</h3>
+                <div className={styles.column}>
+                <h1>You Will Need a User Name</h1>
                     <input
-                        placeholder='User Name'
+                        placeholder=' User Name'
                         type='text'
                         id='user'
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
+                        className={styles.inputText}
                     />
-                    <h3>And a password</h3>
+                    <h3>And a Password</h3>
                     <input
-                        placeholder='Password'
+                        placeholder=' Password'
                         type='password'
                         id='fullname'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        className={styles.inputText}
                     />
+
+                      <input
+                        placeholder=' Repeat Password'
+                        type='password'
+                        id='fullname'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className={styles.inputText}
+                       />
+
+                        <input type='submit' value='Next' className={styles.btnNext2} />
                 </div>
             </div>
         )
     }
     const stepThree = () => {
         return (
-            <div>
-                <h1>Step 3</h1>
-
-                <div>
-                    <h3>Lets get to know you!</h3>
+            <div className={styles.box}>
+               
+                <div className={styles.column}>
+                    <h3>Let's get to know you!</h3>
                     <input
-                        placeholder='Your university'
+                        placeholder=' Your university'
                         type='text'
                         id='university'
                         value={university}
                         onChange={(e) => setUniversity(e.target.value)}
+                        className={styles.inputTextTree}
                     />
                     <input
-                        placeholder='Your graduation date'
+                        placeholder=' Your graduation date'
                         type='date'
                         id='fullname'
                         value={graduation}
                         onChange={(e) => setGraduation(e.target.value)}
+                        className={styles.inputTextTree}
                     />
                     <input
-                        placeholder='Degree'
+                        placeholder=' Degree'
                         type='text'
                         id='fullname'
                         value={degree}
                         onChange={(e) => setDegree(e.target.value)}
+                        className={styles.inputTextTree}
                     />
 
+                    <input type='submit' value="I'm Done!" className={styles.btnNext3} />
                 </div>
             </div>
         )

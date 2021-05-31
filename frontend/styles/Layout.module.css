@@ -16,3 +16,9 @@
   line-height: 1.6;
   letter-spacing: 0;
 }
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

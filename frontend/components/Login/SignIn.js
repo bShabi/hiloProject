@@ -44,7 +44,6 @@ export default function LoginPage() {
                         
                    />
                   
-        
                 </div>
                 
                     <i class="fa fa-lock"></i>

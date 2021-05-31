@@ -158,23 +158,23 @@
   }
 
   .box{
-    width: 50%;
+    width: 100%;
   }
 
   .auth{
-    width: 50%;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 992px) {
   .column {
-    width: 50%;
+    width: 100%;
   }
 
   .box{
-    width: 50%;
+    width: 100%;
   }
   .auth{
-    width: 50%;
+    width: 100%;
   }
 }

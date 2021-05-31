@@ -106,25 +106,51 @@ export default function CreateMentorSlide() {
 
     const stepOne = () => {
         return (
-            <div className={styles.auth}>
+            <div className={styles.box}>
                 <div className={styles.column}>
-                    <h1>Step 1</h1>
+                <h1>Create Account</h1>
                     <input
-                        placeholder='Full Namesss'
+                        placeholder=' Full Namesss'
                         type='text'
                         id='fullname'
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
+                        className={styles.inputText}
                     />
-                </div>
-                <div>
+               
+               
                     <input
-                        placeholder='Academic Email Address'
+                        placeholder=' Academic Email Address'
                         type='email'
                         id='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        className={styles.inputText}
                     />
+
+                      <input
+                        placeholder=' Repeat Email Address'
+                        type='email'
+                        id='email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className={styles.inputText}
+                    />
+                    <div className={styles.subText}>
+                <h3>Or login with</h3>
+                    <div className={styles.socialLinks}>
+                    <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-google fa-2x"></i></a>
+  	 				<a href="#"><i class="fab fa-apple fa-2x"></i></a>
+                       
+                      
+                    </div>
+                <input type='submit' value='Next' className={styles.btnNext} />
+                    <p className={styles.p2}>
+                      Already have an account? <Link href='/account/login'><a>Sign in </a></Link>
+                      </p>
+       
+            </div>    
                 </div>
             </div>
         )
@@ -132,26 +158,37 @@ export default function CreateMentorSlide() {
     }
     const stepTwo = () => {
         return (
-            <div>
-                <h1>Step 2</h1>
-
-                <div>
-                    <h3>You will need a user name</h3>
+            <div className={styles.box}>
+                <div className={styles.column}>
+                <h1>You Will Need a User Name</h1>
                     <input
-                        placeholder='User Name'
+                        placeholder=' User Name'
                         type='text'
                         id='user'
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
+                        className={styles.inputText}
                     />
-                    <h3>And a password</h3>
+                    <h3>And a Password</h3>
                     <input
-                        placeholder='Password'
+                        placeholder=' Password'
                         type='password'
                         id='fullname'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        className={styles.inputText}
                     />
+
+                      <input
+                        placeholder=' Repeat Password'
+                        type='password'
+                        id='fullname'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className={styles.inputText}
+                       />
+
+                        <input type='submit' value='Next' className={styles.btnNext} />
                 </div>
             </div>
         )
@@ -159,8 +196,6 @@ export default function CreateMentorSlide() {
     const stepThree = () => {
         return (
             <div className={styles.box}>
-               
-
                 <div className={styles.column}>
                 <h1>Let’s build your profile!</h1>
                    
@@ -182,11 +217,11 @@ export default function CreateMentorSlide() {
                     /> */}
                     <input
                         placeholder=' Short About of yourself(300 Charters)'
-                        type='textarea  '
+                        type='textarea'
                         id='aboutMentor'
                         value={aboutMentor}
                         onChange={(e) => setAboutMentor(e.target.value)}
-                     
+                        rows="3"
                         className={styles.inputText}
                     />
                     <input
@@ -197,11 +232,11 @@ export default function CreateMentorSlide() {
                         onChange={(e) => setMentorIMG(e.target.value)}
                         className={styles.upload}
                     />
+                    <br></br>
 
                 
              <input type='submit' value='Next' className={styles.btnNext} />
-                </div>
-                
+                </div> 
             </div >
         )
 
