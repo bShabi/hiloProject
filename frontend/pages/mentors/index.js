@@ -8,9 +8,10 @@ export default function MentorPage() {
       {/* Head content + Categories Carusel*/}
       <Layout>
         <HeadContent
-          title="Mentors"
-          content="Proven experts that connect with students and focus on thier
-            individual needs"
+          title="Our Mentors"
+          content="Find & connect with expert mentors to help
+          build the skills you will need to succeed in life"
+       
         />
         <div className={style.wrapper}>
           <div className={style.box1}>Box 1</div>

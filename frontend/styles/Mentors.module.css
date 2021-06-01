@@ -4,9 +4,11 @@
     grid-template-columns: repeat(3,1fr);
     gap: 1em;
 
+
 }
 .wrapper > div{
     border-radius: 30px;
+    
 }
 .box1{
     background-color: #9CC5F6;

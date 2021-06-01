@@ -136,12 +136,22 @@
 	
 }
 
-.footerCol .socialLinks a:hover{
+ .socialLinks a:hover{
 	color: #24262b;
 	background-color: #ffffff;
 }
 
 
+
+.footerCol ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+
+.footerCol ul li a:hover{
+	color: #24262b;
+	padding-left: 5px;
+	font-weight: bold;
+}
 
 
 /*responsive*/
