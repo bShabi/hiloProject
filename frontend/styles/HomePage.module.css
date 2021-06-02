@@ -33,13 +33,10 @@ padding: 10px;
   } 
   
 .search{
-    width: 30%;
+    width: 50%;
     height: 100%;
     display: flex;
-    
-    
-    
-    
+
 }
 
 .inputSearch{
@@ -78,7 +75,6 @@ padding: 10px;
 
   .categories2{
     
-    width: 100%;
     margin-top:20px;
     margin-bottom:60px;
     margin-left: 35%;
@@ -130,8 +126,6 @@ padding: 10px;
 }
 
 .categories a{
-  
-    
     color: #000358;
     text-decoration: none;
     font-size: 22px;

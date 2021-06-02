@@ -1,44 +1,70 @@
 .wrapper{
-    padding: 1em;
+    padding: 2em;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 1em;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1em; 
+    margin-left: 2.5%;
+}
 
 
-}
-.wrapper > div{
-    border-radius: 30px;
-    
-}
 .box1{
-    background-color: #9CC5F6;
+    background-color: #458CFE;
     grid-column: 1;
-    height: 303px;
-    width: 477px;
+    height: 574px;
+    width: 882px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+
 }
 .box2{
-    background-color: #42D1E5;
-    width: 392px;
-    height: 389px;
+    background-color: #000358;
+    width: 824px;
+    height: 750px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-left-radius: 150px;
 }
 .box3{
-    background-color: #5D6BEA;
-    width: 367px;
-    height: 320px;
+    background-color: #AACAF9;
+    width: 889px;
+    height: 765px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+    margin-top: -150px;
+    
 }
 .box4{
-    background-color: rgba(5, 115, 115, 0.71);;
-    width: 445px;
-    height: 437px;
+    background-color: #1000CB;
+    width: 824px;
+    height: 826px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-left-radius: 150px;
+
 }
 .box5{
-    background-color: rgba(5, 115, 115, 0.71);;
-    width: 445px;
-    height: 325px;
-    align-self: baseline;
+    background-color: #000358;
+    width: 889px;
+    height: 572px;
+    margin-top: -180px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
 }
 .box6{
-    background-color: #A1E9F2;
-    width: 364px;
-    height: 394px;
+    background-color: #458CFE;
+    width: 824px;
+    height: 716px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-left-radius: 150px;
+}
+
+@media only screen and (max-width: 426px) {
+    .wrapper > div{
+       display: inline-block;
+        
+    }
 }

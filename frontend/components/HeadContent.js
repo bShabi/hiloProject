@@ -35,8 +35,7 @@ export default function HeadContent({ title, btn1, btn2, content, input2 }) {
     
      
 <div className={style.categories}>
-        
-        
+           
         <ul>
           <li className={style.left}>
             <a href="/">Money Management</a>

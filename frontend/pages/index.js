@@ -21,10 +21,10 @@ export default function HomePage() {
           btn1="Mentors"
           btn2="Tips & Hacks"
         />
-              <div className={sliderStyle.swiperContainer}>
-        <div className={sliderStyle.main}>
-          <Slider name={'example'} />
-        </div>
+     <div className={sliderStyle.swiperContainer}>
+            <div className={sliderStyle.main}>
+              <Slider name={'example'} />
+            </div>
       </div>
       <div className={sliderStyle.swiperContainer}>
         <div className={sliderStyle.main}>
