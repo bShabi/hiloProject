@@ -9,14 +9,14 @@ export default function HomePage() {
       {/* Head content + Categories Carusel*/}
       <Layout>
         <HeadConent
-          title="HiLo is your partner for life."
+          title="HiLo is your partner for life"
           content="Find the practical answers you are looking for, in a manner that
             would make it easy for you, with experts mentors that will lead you
             to succeed"
           btn1="Mentors"
           btn2="Tips & Hacks"
         />
-      </Layout>
+      
       {/* Sliders */}
       <div className={sliderStyle.swiperContainer}>
         <div className={sliderStyle.main}>
@@ -28,6 +28,7 @@ export default function HomePage() {
           <Slider />
         </div>
       </div>
+      </Layout>
     </>
   )
 }

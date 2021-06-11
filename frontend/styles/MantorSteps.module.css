@@ -1,0 +1,190 @@
+.box {
+  background: #e7f0ff;
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 5px;
+  height: 100%;
+}
+
+.column {
+  float: left;
+  height: 600px;
+  padding: 15px;
+  text-align: center;
+  padding-top: 2%;
+  border: 1px solid #bfbfbf;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  border-radius: 5%;
+  background: #fff;
+  width: 30%;
+}
+
+.inputText {
+  background: whitesmoke;
+  border-radius: 5%;
+  width: 75%;
+  padding-top: 1px;
+  margin: 5%;
+  border-style: none;
+  box-shadow: 0px 5px 5px gray;
+}
+
+.inputText::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(168, 167, 167);
+  opacity: 5; /* Firefox */
+  font-family: 'Work Sans', sans-serif;
+  padding: 4px;
+}
+
+.inputText i {
+  float: left;
+}
+
+.upload::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.upload {
+  content: 'Choose your best picture!   ';
+  display: inline-block;
+  background: #002060;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+.upload:hover::before {
+  border-color: black;
+}
+.upload:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.btnNext3Succ {
+  width: 200px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  background: #000358;
+  color: #fff;
+  font-family: Verdana;
+  margin: 20px;
+}
+.btnNextSucc {
+  color: #fff;
+  background: blue;
+  border: none;
+  padding: 5px 15px;
+  font-family: 'Work Sans';
+  font-size: 20px;
+  text-align: center;
+  width: 30%;
+  margin: 5%;
+}
+.btnNext {
+  color: #fff;
+  background: #bdbdbd;
+  border: none;
+  padding: 5px 15px;
+  font-family: 'Work Sans';
+  font-size: 20px;
+  text-align: center;
+  width: 30%;
+  margin: 5%;
+}
+
+.btnNext:hover {
+  color: #bdbdbd;
+  background: #fff;
+  font-weight: bold;
+  border-color: black;
+  border: 1px solid;
+}
+
+.socialLinks a {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: #458cfe;
+  margin: 0 20px 10px 0;
+  text-align: center;
+  line-height: 60px;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.socialLinks a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+.subText {
+  font-size: 16px;
+  color: #000358;
+  display: block;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.subText h3 {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.subText .p2 a {
+  text-decoration: none;
+}
+
+.column h2 {
+  color: #000358;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Work Sans';
+}
+
+.column h1 {
+  color: #000358;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Work Sans';
+}
+
+.column h3 {
+  color: #000358;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  font-style: normal;
+  margin: 5%;
+}
+
+.p {
+  padding-top: 10%;
+  color: #000358;
+  font-family: 'Work Sans';
+  font-weight: bold;
+  font-size: 20px;
+}
+.a {
+  text-decoration: none;
+  color: #458cfe;
+  background: none;
+  width: 200px;
+  font-weight: bold;
+}
+
+.p2 {
+  font-size: 20px;
+  color: #000358;
+  font-weight: bold;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.p a {
+  text-decoration: none;
+}

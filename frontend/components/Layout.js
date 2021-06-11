@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import style from '@/styles/Layout.module.css'
 import Navbar from './Navbar'
+import Footer from '@/components/Footer'
+
 
 export default function Layout({ title, keywords, description, children }) {
   return (
@@ -9,6 +11,7 @@ export default function Layout({ title, keywords, description, children }) {
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          
         />
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -16,6 +19,8 @@ export default function Layout({ title, keywords, description, children }) {
       </Head>
       <Navbar />
       <div className={style.container}>{children}</div>
+      <Footer />
+
     </div>
   )
 }

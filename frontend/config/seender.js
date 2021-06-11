@@ -62,14 +62,24 @@ const importDegrees = async () => {
     //     })
     //}
 
-    axios
-        .post('http://localhost:1337/DEGREES', {
-            degree: postUser.Degrees,
+    for (let index = 0; index < data.length; index++) {
+        const postUser = data[index]
+        console.log(postUser.Degrees)
+        const strapiRes = await fetch(`http://localhost:1337/Degrees`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                degree: postUser.Degrees,
+            }),
 
+        }).then((result) => {
+            console.log("Success");
         })
-        .then(response => {
-            console.log(response);
-        });
+
+
+    }
 
 }
 // importData()

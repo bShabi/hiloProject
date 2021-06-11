@@ -1,14 +1,348 @@
-.container {
-  padding: 10px;
+.box {
+  background: #e7f0ff;
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 5px;
+  height: 100%;
 }
 
-.blugbg {
-  background: #458cfe;
-  width: 599px;
-  height: 566px;
-  border-radius: 36px;
-  padding: 30px;
+.row {
+  margin: 0;
+  margin: 1%;
+  background: #e7f0ff;
 }
+
+.inputText {
+  background: whitesmoke;
+  border-radius: 5%;
+  width: 85%;
+  padding-top: 1px;
+  margin: 5%;
+  border-style: none;
+  box-shadow: 0px 5px 5px gray;
+  height: 9%;
+}
+
+.inputTextTree {
+  background: whitesmoke;
+  border-radius: 5%;
+  width: 85%;
+  padding-top: 1px;
+  margin: 5%;
+  border-style: none;
+  box-shadow: 0px 5px 5px gray;
+  height: 8%;
+}
+
+.inputTextTree::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(168, 167, 167);
+  opacity: 5; /* Firefox */
+  font-family: Verdana, sans-serif;
+  padding: 4px;
+}
+
+.inputTextStepOne {
+  background: whitesmoke;
+  border-radius: 5%;
+  width: 85%;
+  padding-top: 1px;
+  margin: 5%;
+  border-style: none;
+  box-shadow: 0px 5px 5px gray;
+  height: 5%;
+}
+
+.inputTextStepOne::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(168, 167, 167);
+  opacity: 5; /* Firefox */
+  font-family: Verdana, sans-serif;
+  padding: 4px;
+}
+
+.inputTextStepOne i {
+  float: left;
+}
+
+.inputText::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(168, 167, 167);
+  opacity: 5; /* Firefox */
+  font-family: Verdana, sans-serif;
+  padding: 4px;
+}
+
+.inputText i {
+  float: left;
+}
+
+.subText {
+  font-size: 16px;
+  color: #000358;
+  display: block;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.subText h3 {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.subText .p2 a {
+  text-decoration: none;
+}
+
+.socialLinks a {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: #458cfe;
+  margin: 0 20px 10px 0;
+  text-align: center;
+  line-height: 60px;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.socialLinks a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  height: 600px;
+  padding: 15px;
+  text-align: center;
+  padding-top: 2%;
+  border: 1px solid #bfbfbf;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  border-radius: 5%;
+  background: #fff;
+  width: 30%;
+}
+
+.column h2 {
+  color: #000358;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Work Sans';
+}
+
+.column h1 {
+  color: #000358;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Work Sans';
+}
+
+.column h3 {
+  color: #000358;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  font-style: normal;
+  margin: 5%;
+}
+
+.subtitle h1 {
+  padding-top: 5%;
+  color: #000358;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+}
+.subtitle p {
+  color: #000358;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Work Sans';
+}
+
+.btnSignIn {
+  width: 200px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  background: #000358;
+  color: #fff;
+  font-family: 'Work Sans';
+  margin: 20px;
+}
+.btnNext3Succ {
+  width: 200px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  background: #000358;
+  color: #fff;
+  font-family: Verdana;
+  margin: 20px;
+}
+.btnNext3 {
+  width: 200px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  background: #bdbdbd;
+  color: #fff;
+  font-family: Verdana;
+  margin: 20px;
+}
+
+.btnNext3:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.btnSignIn:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.btnSkip {
+  color: #458cfe;
+  border: none;
+  background: none;
+  width: 200px;
+  padding-top: 5%;
+  font-weight: bold;
+  font-family: 'Work Sans';
+}
+.btnNextSucc {
+  color: #fff;
+  background: blue;
+  border: none;
+  padding: 5px 15px;
+  font-family: 'Work Sans';
+  font-size: 20px;
+  text-align: center;
+  width: 30%;
+  margin: 5%;
+}
+
+.btnNext {
+  color: #fff;
+  background: #bdbdbd;
+  border: none;
+  padding: 5px 15px;
+  font-family: 'Work Sans';
+  font-size: 20px;
+  text-align: center;
+  width: 30%;
+  margin: 5%;
+}
+
+.btnNext:hover {
+  color: #bdbdbd;
+  background: #fff;
+  font-weight: bold;
+  border-color: black;
+  border: 1px solid;
+}
+.btnNext2Succ {
+  color: #fff;
+  background: blue;
+  border: none;
+  padding: 5px 15px;
+  font-family: 'Work Sans';
+  font-size: 20px;
+  text-align: center;
+  width: 30%;
+  margin: 10%;
+}
+.btnNext2 {
+  color: #fff;
+  background: #bdbdbd;
+  border: none;
+  padding: 5px 15px;
+  font-family: 'Work Sans';
+  font-size: 20px;
+  text-align: center;
+  width: 30%;
+  margin: 10%;
+}
+
+.btnNext2:hover {
+  color: #bdbdbd;
+  background: #fff;
+  font-weight: bold;
+  border-color: black;
+  border: 1px solid;
+}
+
+.p {
+  padding-top: 10%;
+  color: #000358;
+  font-family: 'Work Sans';
+  font-weight: bold;
+  font-size: 20px;
+}
+.a {
+  text-decoration: none;
+  color: #458cfe;
+  background: none;
+  width: 200px;
+  font-weight: bold;
+}
+
+.p2 {
+  font-size: 20px;
+  color: #000358;
+  font-weight: bold;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.p a {
+  text-decoration: none;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 100%;
+  }
+
+  .box {
+    width: 100%;
+  }
+  .p {
+    width: 100%;
+  }
+  .row {
+    width: 100%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  .row {
+    width: 100%;
+  }
+}
+
+/* .btnContext button{
+  font-size: 70px;
+  color: #6d0404;
+}
+
+
+
 .title h2 {
   letter-spacing: 0.2px;
   margin: 0 auto;
@@ -16,7 +350,7 @@
   width: 353px;
   height: 56px;
   font-weight: 800;
-  color: #ffffff;
+  color: #6d0404;
 }
 
 .blugbg h3 {

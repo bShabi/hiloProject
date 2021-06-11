@@ -20,11 +20,21 @@ export default function Navbar() {
         <ul className={style.navUl} id="nav-ul">
           <li>
             <Link href="/">
-              <a>Home</a>
+              <a> <Image
+                src="/HiLo-logo.png"
+                alt=""
+                width={50}
+                height={50}
+              /></a>
             </Link>
           </li>
           <li>
             <Link href="/">
+              <a>Explorer Ask</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/TipsAndHacks">
               <a>Life Tips & Hacks</a>
             </Link>
           </li>
@@ -35,26 +45,26 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/">
-              <a>Join Us</a>
+              <a>Courses</a>
             </Link>
           </li>
           <li>
-            <Link href="/">
-              <a>About</a>
+            <Link href="/About">
+              <a>About Hilo</a>
             </Link>
           </li>
           {/* Sign up Button  */}
           <li className={style.btnSignin}>
             <Link href="/account/signup">
-              <a className="btn-secondary btn-icon">
-                <FaSignInAlt /> Join HiLo
+              <a className="btn-secondary">
+                Join HiLo
               </a>
             </Link>
           </li>
           {/* Login Button */}
           <li className={style.btnLogin}>
             <Link href="/account/login">
-              <a className="btn-secondary btn-icon">
+              <a>
                 Log in
               </a>
             </Link>

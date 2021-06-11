@@ -25,28 +25,32 @@ export default function SliderCreateAccount(students, degrees) {
 
     const welcome = () => {
         return (
-            <div className={styles.blugbg}>
+            
+                    <div className={styles.column}>
+                   <h2>Create Account</h2>
+                        
+                         <div className={styles.subtitle}> 
+                        <h1>Are you a student or a mentor?</h1>
+                        {/* <h1>or a mentor?</h1> */}
+                        <p>*Students will get benefits and discounts on the platform</p>
+                         </div> 
+                         <div className={styles.btnContext}> 
+                         
+                            <button className={styles.btnSignIn} onClick={studnetHandlerBtn}>Student</button>
+                            <button className={styles.btnSignIn} onClick={mentorHandlerBtn}>Mentor</button>
+                            {/* {screen === 'Student' && (CreateStudent(students.student))}
+                            {screen === 'Mentor' && (CreateMentor(students.student))} */}
+                         </div> 
+                         <div className={styles.btnContext}> 
+                            <button className={styles.btnSkip} onClick={regualerUserBtn}>Skip&nbsp; <i class='fas fa-angle-right'></i> </button> 
+                            <p className={styles.p}>Already have an account? <a className={styles.a}>Sign in</a></p>
+                        </div>
+                        
+                       
 
-                <div className={styles.title}>
-                    <h2>Create account</h2>
-                </div>
-                {/* <div className={styles.subtitle}> */}
-                <h3>Are you a student or a mentor?</h3>
-                <p>*Students will get benefits and discounts on the platform</p>
-                {/* </div> */}
-                <div>
-                    <button className={styles.btnSignIn} onClick={studnetHandlerBtn}>Student</button>
-                    <button className={styles.btnSignIn} onClick={mentorHandlerBtn}>Mentor</button>
-                    {/* {screen === 'Student' && (CreateStudent(students.student))}
-                    {screen === 'Mentor' && (CreateMentor(students.student))} */}
-
-                </div>
-                <div>
-                    <button onClick={regualerUserBtn}>Skip</button>
-                    <p>Already have an account? Sign in</p>
-                </div>
-
-            </div>
+                    </div>
+         
+              
         )
     }
 

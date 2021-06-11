@@ -9,6 +9,10 @@ export const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
     let univeristy = []
+    let degrees = []
+    let allUsername = []
+    let allEmail = []
+
 
     const [error, setError] = useState(null)
     // const [univeristy, setUniveristy] = useState()
@@ -16,17 +20,52 @@ export const AuthProvider = ({ children }) => {
     const router = useRouter()
     useEffect(async () => {
         checkUserLoggedIn()
+        // await forgotPassword()
+        await getAllUsers()
         await getUniversities()
+        await getDegree()
+        await getAllEmail()
     }, [])
+
+    const getAllEmail = async () => {
+        await axios.get(`http://localhost:1337/Users`).then((res) => {
+            res.data.forEach((elm) => {
+                allEmail.push(elm.email)
+            })
+            console.log(allEmail);
+
+        }
+        )
+    }
+    const getAllUsers = async () => {
+        await axios.get(`http://localhost:1337/Users`).then((res) => {
+            res.data.forEach((elm) => {
+                allUsername.push(elm.username)
+            })
+            console.log(allUsername);
+
+        }
+        )
+    }
 
     const getSugesetUniversity = async (value) => {
         console.log(value);
+        let degree = []
         await axios.get(`http://localhost:1337/universities?NAME_contains=${value}`).then((res) => {
             console.log(res);
         })
     }
-    getDegree = async () => {
-        await axios.get(`{API_URL}/degrees`)
+    const getDegree = async () => {
+        let degree = []
+        let resData
+        await axios.get(`http://localhost:1337/degrees`).then((res) => {
+            resData = res.data
+            resData.forEach(elm => {
+                degrees.push({ value: elm.degree, label: elm.degree })
+            })
+            console.log(degrees);
+        })
+
     }
     const getUniversities = async () => {
         console.log("in");
@@ -40,22 +79,24 @@ export const AuthProvider = ({ children }) => {
             console.log(univeristy);
 
         })
-
-        //     res.data.find((value, index) => {
-        //         dataUni.push({ value: value.NAME, label: value.NAME });
-        //         setUniveristy(prevState => {
-        //             return {
-        //                 ...prevState,
-        //                 value: dataUni.NAME, label: dataUni.NAME
-        //             }
-        //         })
-        //     })
-
-        // })
-        // console.log("univeristy", univeristy);
-
-
     }
+
+    // const forgotPassword = async (email) => {
+    //     axios
+    //         .post('http://localhost:1337/auth/forgot-password', {
+    //             email: 'bshabi.dev@gmail.com',
+    //             url:
+    //                 'http:/localhost:1337/admin/plugins/users-permissions/auth/reset-password',
+    //         })
+    //         .then(response => {
+    //             // Handle success.
+    //             console.log('Your user received an email');
+    //         })
+    //         .catch(error => {
+    //             // Handle error.
+    //             console.log('An error occurred:', error.response);
+    //         });
+    // }
     const register = async (user) => {
         console.log(user);
 
@@ -130,7 +171,7 @@ export const AuthProvider = ({ children }) => {
         }
     }
     return (
-        <AuthContext.Provider value={{ getSugesetUniversity, univeristy, user, error, register, login, logout, getUniversities }}>
+        <AuthContext.Provider value={{ getSugesetUniversity, allUsername, degrees, univeristy, user, error, register, login, logout, getUniversities, allEmail }}>
             {children}
         </AuthContext.Provider>
     )
