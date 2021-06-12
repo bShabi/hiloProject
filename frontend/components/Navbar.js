@@ -44,7 +44,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/Courses">
               <a>Courses</a>
             </Link>
           </li>

@@ -2,6 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/account/signup": "pages/account/signup.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/Courses": "pages/Courses.js",
+  "/404": "pages/404.js",
+  "/mentors": "pages/mentors.js",
+  "/TipsAndHacks": "pages/TipsAndHacks.js",
+  "/api/user": "pages/api/user.js"
 }

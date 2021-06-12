@@ -19,6 +19,21 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
+    "/404": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/404.js"
+    ],
+    "/Courses": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Courses.js"
+    ],
+    "/TipsAndHacks": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/TipsAndHacks.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -29,10 +44,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/account/signup": [
+    "/mentors": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/account/signup.js"
+      "static/chunks/pages/mentors.js"
     ]
   },
   "ampFirstPages": []

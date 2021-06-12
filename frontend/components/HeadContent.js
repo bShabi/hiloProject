@@ -1,23 +1,31 @@
 import style from '@/styles/HomePage.module.css'
 
-export default function HeadContent({ title, btn1, btn2, content }) {
+export default function HeadContent({ title, btn1, btn2, content, input2 }) {
   return (
     <>
       {/* <Head>
         <script dangerouslySetInnerHTML={{ __html: sliderScript }} />
       </Head> */}
+
       <div className={style.content}>
         <h1>{title}</h1>
         <p>{content}</p>
-
-        {btn1 && btn2 && (
-          <div className="btns">
-            <button className={style.lightbtn}>{btn1}</button>
-            <button className={style.darkbtn}>{btn2}</button>
-          </div>
-        )}
       </div>
-      <div className={style.categories}>
+
+      <div className={style.categories2}>
+        <div className={style.search}>
+          <input className={style.inputSearch} type="text" placeholder="Ask us something...">
+          </input>
+          <button className={style.searchBdutton} type="submit" >
+            <i class="fa fa-question-circle fa-5x" aria-hidden="true" ></i>
+          </button>
+        </div>
+
+      </div>
+
+
+      {/* <div className={style.categories}>
+
         <ul>
           <li className={style.left}>
             <a href="/">Money Management</a>
@@ -41,10 +49,10 @@ export default function HeadContent({ title, btn1, btn2, content }) {
             <a href="/">Mental Health</a>
           </li>
           <li className={style.right}>
-            <a href="/">Trave</a>l
+            <a href="/">Trave</a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </>
   )
 }
